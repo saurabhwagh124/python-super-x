@@ -1,5 +1,6 @@
 # Python-Super-X
 
+
 Date: 13/02/24
 1. Starting to create a layout
 2. 11:04pm commiting login page draft 1
@@ -8,6 +9,11 @@ Date: 14/02/24
 1. Aligning buttons -Saurabh
 2. Completed MainLoginPage -Saurabh
 3. Completed AdminLoginPage -Saurabh
+
+Date: 13/02/24
+1. created registration page
+2. 5:40 commiting 
+3. completed Aditya
 
 ## Getting started
 
