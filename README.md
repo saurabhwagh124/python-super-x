@@ -4,6 +4,8 @@ Date: 13/02/24
 1. Starting to create a layout
 2. 11:04pm commiting login page draft 1
 
+Date: 14/02/24
+1. Aligning buttons 
 
 ## Getting started
 
