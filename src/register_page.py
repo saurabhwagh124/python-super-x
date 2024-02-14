@@ -8,15 +8,15 @@ class RegisterWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Register here")
         self.setGeometry(350,150,1200,800)
-        self.get_regis_ui()
+        self.get_register_ui()
 
-    def get_regis_ui(self):
-        regis_window=QFormLayout()
-        name_label=QLabel("name: ")
+    def get_register_ui(self):
+        register_window=QFormLayout()
+
+        # creating labels
+        name_label=QLabel("Name: ")
         phone_label=QLabel("PhoneNo: ")
-         # creating labels
         user_label = QLabel("Username: ")
-        #username_label.se
         pass_label = QLabel("Password: ")
 
         
@@ -39,11 +39,11 @@ class RegisterWindow(QWidget):
         name_box =QHBoxLayout()
         name_box.setContentsMargins(420,250,400,0)
         phone_box=QHBoxLayout()
-        phone_box.setContentsMargins(400,20,400,0)
+        phone_box.setContentsMargins(400,0,400,0)
         user_box=QHBoxLayout()
-        user_box.setContentsMargins(400,20,400,0)
+        user_box.setContentsMargins(400,0,400,0)
         pass_box=QHBoxLayout()
-        pass_box.setContentsMargins(400,20,400,0)
+        pass_box.setContentsMargins(400,0,400,0)
         submit_box = QVBoxLayout()
 
 
@@ -65,13 +65,13 @@ class RegisterWindow(QWidget):
         submit_box.setAlignment(Qt.AlignCenter)
 
          #adding elements to form layout
-        regis_window.addRow(name_box)
-        regis_window.addRow(phone_box)
-        regis_window.addRow(user_box)
-        regis_window.addRow(pass_box)
-        regis_window.addRow(submit_box)
-        regis_window.setAlignment(Qt.AlignCenter)
-        self.setLayout(regis_window)
+        register_window.addRow(name_box)
+        register_window.addRow(phone_box)
+        register_window.addRow(user_box)
+        register_window.addRow(pass_box)
+        register_window.addRow(submit_box)
+        register_window.setAlignment(Qt.AlignCenter)
+        self.setLayout(register_window)
 
 app1 = QApplication(sys.argv)
 ex1 = RegisterWindow()
