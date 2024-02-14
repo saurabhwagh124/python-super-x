@@ -19,13 +19,14 @@ class MainWindow(QWidget):
 
         # creating labels
         username_label = QLabel("Username: ")
+        #username_label.se
         password_label = QLabel("Password: ")
 
         # creating LineEdits
         username_line = QLineEdit()
-        username_line.setGeometry(0,0,200,40)
+        username_line.setGeometry(0,0,200,60)
         password_line = QLineEdit()
-        password_line.setGeometry(0,0,200,40)
+        password_line.setGeometry(0,0,200,60)
 
 
         #creating buttons
@@ -33,11 +34,17 @@ class MainWindow(QWidget):
         login_button.setFixedSize(100,40)
         signup_button = QPushButton("Signup")
         signup_button.setFixedSize(100,40)
+        admin_button = QPushButton("Supplier")
+        admin_button.setFixedSize(100,40)
+
 
         #creating boxes
         username_box = QHBoxLayout()
+        username_box.setContentsMargins(400,250,400,0)
         password_box = QHBoxLayout()
-        button_box = QVBoxLayout()
+        password_box.setContentsMargins(400,0,400,0)
+        button_box = QHBoxLayout()
+        admin_box = QVBoxLayout()
 
         # adding elements in the hboxes
         username_box.addWidget(username_label)
@@ -50,6 +57,9 @@ class MainWindow(QWidget):
         button_box.addWidget(signup_button)
         button_box.setAlignment(Qt.AlignCenter)
 
+        admin_box.addWidget(admin_button)
+        admin_box.setAlignment(Qt.AlignCenter)
+
         #creating a child layout of vbox to insert hbox and push buttons in
         
 
@@ -57,8 +67,10 @@ class MainWindow(QWidget):
         login_window.addRow(username_box)
         login_window.addRow(password_box)
         login_window.addRow(button_box)
+        login_window.addRow(admin_box)
         login_window.setAlignment(Qt.AlignCenter)
         self.setLayout(login_window)
+
 
 
 

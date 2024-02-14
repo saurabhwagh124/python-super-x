@@ -5,7 +5,9 @@ Date: 13/02/24
 2. 11:04pm commiting login page draft 1
 
 Date: 14/02/24
-1. Aligning buttons 
+1. Aligning buttons -Saurabh
+2. Completed MainLoginPage -Saurabh
+3. Completed AdminLoginPage -Saurabh
 
 ## Getting started
 
