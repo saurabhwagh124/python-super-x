@@ -8,6 +8,7 @@ Date: 14/02/24
 1. Aligning buttons -Saurabh
 2. Completed MainLoginPage -Saurabh
 3. Completed AdminLoginPage -Saurabh
+4. Completed confirmationpage -Saurabh
 
 ## Getting started
 
