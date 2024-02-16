@@ -10,6 +10,9 @@ Date: 14/02/24
 3. Completed AdminLoginPage -Saurabh
 4. Completed confirmationpage -Saurabh
 
+Date: 15/02/24
+5. Addded all basic user dependend ui files -Saurbh
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

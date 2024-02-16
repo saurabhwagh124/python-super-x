@@ -1,6 +1,8 @@
 import sys 
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt,QSize
+from Post_Login_Window import *
+from register_page import *
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -32,8 +34,8 @@ class MainWindow(QWidget):
         #creating buttons
         login_button = QPushButton("Login")
         login_button.setFixedSize(100,40)
-        signup_button = QPushButton("Signup")
-        signup_button.setFixedSize(100,40)
+        self.signup_button = QPushButton("Signup",self)
+        self.signup_button.setFixedSize(100,40)
         admin_button = QPushButton("Supplier")
         admin_button.setFixedSize(100,40)
 
@@ -54,13 +56,14 @@ class MainWindow(QWidget):
         password_box.addWidget(password_line)
 
         button_box.addWidget(login_button)
-        button_box.addWidget(signup_button)
+        button_box.addWidget(self.signup_button)
         button_box.setAlignment(Qt.AlignCenter)
 
         admin_box.addWidget(admin_button)
         admin_box.setAlignment(Qt.AlignCenter)
 
-        #creating a child layout of vbox to insert hbox and push buttons in
+        #onclick operations
+        #self.signup_button.clicked.connect(Tanker_Drinking_Water_Window())
         
 
         #adding elements to form layout
@@ -70,9 +73,6 @@ class MainWindow(QWidget):
         login_window.addRow(admin_box)
         login_window.setAlignment(Qt.AlignCenter)
         self.setLayout(login_window)
-
-
-
 
 app = QApplication(sys.argv)
 ex = MainWindow()
