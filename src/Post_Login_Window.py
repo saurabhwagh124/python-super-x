@@ -9,19 +9,19 @@ class PostLoginWindow(QWidget):
         self.setGeometry(350,150,1200,800)
         layout = QVBoxLayout()
 
-        button1 = QPushButton("Need a Tanker ?")
-        button2 = QPushButton("Need Drinking Water ?")
+        tanker_button = QPushButton("Need a Tanker ?")
+        drinking_button = QPushButton("Need Drinking Water ?")
 
-        button1.setFixedSize(220,60)
-        button2.setFixedSize(220,60)
+        tanker_button.setFixedSize(220,60)
+        drinking_button.setFixedSize(220,60)
 
-        font = button1.font()
+        font = tanker_button.font()
         font.setPointSize(12)  
-        button1.setFont(font)
+        tanker_button.setFont(font)
 
-        font = button2.font()
+        font = drinking_button.font()
         font.setPointSize(12)  
-        button2.setFont(font)
+        drinking_button.setFont(font)
 
         or_text = QLabel("Or" , self)
         
@@ -29,9 +29,9 @@ class PostLoginWindow(QWidget):
         or_text.setAlignment(Qt.AlignCenter)
         or_text.setStyleSheet("font-size: 20px;")
 
-        layout.addWidget(button1)
+        layout.addWidget(tanker_button)
         layout.addWidget(or_text)
-        layout.addWidget(button2)
+        layout.addWidget(drinking_button)
 
         self.setLayout(layout)
         print(self.children())
