@@ -7,7 +7,9 @@ class PostLoginWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Where's my Water")
         self.setGeometry(350,150,1200,800)
-        layout = QVBoxLayout()
+        
+    def get_tanker_drinking_ui(self):
+        tanker_drinking_layout = QVBoxLayout()
 
         tanker_button = QPushButton("Need a Tanker ?")
         drinking_button = QPushButton("Need Drinking Water ?")
@@ -25,19 +27,12 @@ class PostLoginWindow(QWidget):
 
         or_text = QLabel("Or" , self)
         
-        layout.setAlignment(Qt.AlignCenter)
+        tanker_drinking_layout.setAlignment(Qt.AlignCenter)
         or_text.setAlignment(Qt.AlignCenter)
         or_text.setStyleSheet("font-size: 20px;")
 
-        layout.addWidget(tanker_button)
-        layout.addWidget(or_text)
-        layout.addWidget(drinking_button)
+        tanker_drinking_layout.addWidget(tanker_button)
+        tanker_drinking_layout.addWidget(or_text)
+        tanker_drinking_layout.addWidget(drinking_button)
 
-        self.setLayout(layout)
-        print(self.children())
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = PostLoginWindow()
-    window.show()
-    sys.exit(app.exec_())
+        return tanker_drinking_layout
