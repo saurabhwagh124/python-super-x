@@ -1,6 +1,11 @@
 # Python-Super-X
 
 Date: 16/02/24
+1. Changed Text FontSize. -Nachiket 
+2. Changed Push Button Size. -Nachiket
+3. Fixed the variable name issue. -Nachiket
+
+Date: 16/02/24
 1. Changed FontSized
 2. Changed FontStyle to Arial
 3. Fontstyle of text in side Textbox also changed
