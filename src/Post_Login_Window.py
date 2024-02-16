@@ -12,15 +12,15 @@ class PostLoginWindow(QWidget):
         button1 = QPushButton("Need a Tanker ?")
         button2 = QPushButton("Need Drinking Water ?")
 
-        button1.setFixedSize(300, 80)
-        button2.setFixedSize(300, 80)
+        button1.setFixedSize(220,60)
+        button2.setFixedSize(220,60)
 
         font = button1.font()
-        font.setPointSize(16)  
+        font.setPointSize(12)  
         button1.setFont(font)
 
         font = button2.font()
-        font.setPointSize(16)  
+        font.setPointSize(12)  
         button2.setFont(font)
 
         or_text = QLabel("Or" , self)
