@@ -5,7 +5,7 @@ from PyQt5.QtCore import Qt,QSize
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()        
-        self.setWindowTitle("Login")
+        self.setWindowTitle("Where's My Water?")
         
         self.setGeometry(350,150,1200,800)
         # geometry(align left, align top, width, height)
