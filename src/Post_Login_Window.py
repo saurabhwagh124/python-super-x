@@ -27,7 +27,7 @@ class PostLoginWindow(QWidget):
         
         layout.setAlignment(Qt.AlignCenter)
         or_text.setAlignment(Qt.AlignCenter)
-        or_text.setStyleSheet("font-size: 24px;")
+        or_text.setStyleSheet("font-size: 20px;")
 
         layout.addWidget(button1)
         layout.addWidget(or_text)
