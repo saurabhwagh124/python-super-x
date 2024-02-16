@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QVBoxLayout, QPushButton, QWidget, QLabel
 from PyQt5.QtCore import Qt
 
-class Window(QWidget):
+class PostLoginWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Where's my Water")
@@ -23,14 +23,14 @@ class Window(QWidget):
         font.setPointSize(16)  
         button2.setFont(font)
 
-        text = QLabel("Or" , self)
+        or_text = QLabel("Or" , self)
         
         layout.setAlignment(Qt.AlignCenter)
-        text.setAlignment(Qt.AlignCenter)
-        text.setStyleSheet("font-size: 24px;")
+        or_text.setAlignment(Qt.AlignCenter)
+        or_text.setStyleSheet("font-size: 24px;")
 
         layout.addWidget(button1)
-        layout.addWidget(text)
+        layout.addWidget(or_text)
         layout.addWidget(button2)
 
         self.setLayout(layout)
@@ -38,6 +38,6 @@ class Window(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = Window()
+    window = PostLoginWindow()
     window.show()
     sys.exit(app.exec_())
