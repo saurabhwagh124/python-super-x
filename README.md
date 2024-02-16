@@ -1,5 +1,11 @@
 # Python-Super-X
 
+Date: 16/02/24
+1. Changed FontSized
+2. Changed FontStyle to Arial
+3. Fontstyle of text in side Textbox also changed
+4. Submit button Size changed 
+- Aditya Andhale
 
 Date: 13/02/24
 1. Starting to create a layout
