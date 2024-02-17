@@ -84,6 +84,12 @@ class ConfirmationWindow(QWidget):
         
         self.setLayout(confirmation_window)
 
+        #Adding fonts
+        font = self.font()
+        font.setFamily("Roboto")
+        font.setPointSize(14)
+        self.setFont(font)
+        
 app = QApplication(sys.argv)
 ex = ConfirmationWindow()
 ex.show()
