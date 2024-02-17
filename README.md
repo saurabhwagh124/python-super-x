@@ -1,5 +1,9 @@
 # Python-Super-X
 
+Date: 17/02/24
+1. Attached background to Confirmation windows -Nachiket 
+2. Attached background to Post_Login_Window -Nachiket 
+
 Date: 16/02/24
 1. Changed Text FontSize. -Nachiket 
 2. Changed Push Button Size. -Nachiket
