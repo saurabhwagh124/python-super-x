@@ -1,5 +1,8 @@
 # Python-Super-X
-
+Date: 18/02/24
+1. Submit button created in confirmation
+2. text value transfer to confored page
+3. alignment of conformed remaining
 Date: 17/02/24
 1. Attached background to Confirmation windows -Nachiket 
 2. Attached background to Post_Login_Window -Nachiket 

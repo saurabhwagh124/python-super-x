@@ -1,4 +1,8 @@
 import sys
+from comformed import*
+from PyQt5.QtWidgets import * 
+from PyQt5.QtGui import *
+
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
@@ -12,8 +16,9 @@ class ConfirmationWindow(QWidget):
         self.setWindowTitle("Where's My Water?")
         self.setGeometry(350,150,1200,800)
         self.get_confirmation_ui()
+        self.comformedPage=ComfirmedDetails()
 
-        oImage = QtGui.QImage(os.path.join(CURRENT_DIR, "water.jpg"))
+        oImage = QtGui.QImage(os.path.join(CURRENT_DIR, "water2.jpg"))
         sImage = oImage.scaled(QtCore.QSize(1200, 800))
         palette = QtGui.QPalette()
         palette.setBrush(QtGui.QPalette.Window, QtGui.QBrush(sImage))
@@ -31,15 +36,26 @@ class ConfirmationWindow(QWidget):
         con_date  = QLabel("Select Date: ")
         con_time = QLabel("Select Time: ")
 
-        #creating buttons
-        con_submit = QLabel("Submit")
+         #creating buttons  
+        self.submit_button = QPushButton("Submit")
+        self.submit_button.setFixedSize(100,50)
+        self.submit_button.setFont(QFont('Arial', 15))
+        submit_box = QVBoxLayout()
+        submit_box.addWidget(self.submit_button)
+        submit_box.setAlignment(Qt.AlignRight)
+        self.submit_button.move(60, -100)
+        self.submit_button.clicked.connect(self.passingInformation)
+        confirmation_window.addWidget(self.submit_button)
+        
+
+       
 
         #creating line edits
-        con_quantity_line  = QLineEdit()
-        con_name_line = QLineEdit()
-        con_phone_line = QLineEdit()
-        con_phone_line.setMaxLength(10)
-        con_address_line = QLineEdit()
+        self.con_quantity_line  = QLineEdit()
+        self.con_name_line = QLineEdit()
+        self.con_phone_line = QLineEdit()
+        self.con_phone_line.setMaxLength(10)
+        self.con_address_line = QLineEdit()
 
         #creating boxes
         quantity_box = QHBoxLayout()
@@ -66,17 +82,17 @@ class ConfirmationWindow(QWidget):
         con_calender.setGeometry(0,0,100,100)
         #adding elements into boxes
         quantity_box.addWidget(con_quantity)
-        quantity_box.addWidget(con_quantity_line)
+        quantity_box.addWidget(self.con_quantity_line)
 
 
         name_box.addWidget(con_name)
-        name_box.addWidget(con_name_line)
+        name_box.addWidget(self.con_name_line)
         
         phone_box.addWidget(con_phone)
-        phone_box.addWidget(con_phone_line)
+        phone_box.addWidget(self.con_phone_line)
         
         address_box.addWidget(con_address)
-        address_box.addWidget(con_address_line)
+        address_box.addWidget(self.con_address_line)
         
         date_box.addWidget(con_date)
         date_box.addWidget(con_calender)
@@ -90,9 +106,19 @@ class ConfirmationWindow(QWidget):
         confirmation_window.addRow(address_box)
         confirmation_window.addRow(date_box)
         confirmation_window.addRow(time_box)
+        confirmation_window.addRow(submit_box)
         
         
         self.setLayout(confirmation_window)
+
+         #changed
+    def passingInformation(self): 
+        self.comformedPage.comf_quantity_line.setText(self.con_quantity_line.text())
+        self.comformedPage.comf_name_line.setText(self.con_name_line.text())
+        self.comformedPage.comf_phone_line.setText(self.con_phone_line.text())
+        self.comformedPage.comf_address_line.setText(self.con_address_line.text())
+        self.comformedPage.displayInfo()
+
 
 app = QApplication(sys.argv)
 ex = ConfirmationWindow()

@@ -56,7 +56,7 @@ class RegisterWindow(QWidget):
             pass_line.setFont(QFont('Arial', 12))
 
 
-            #creating submit button
+            #creating submit button ...................
 
             self.submit_button = QPushButton("Submit")
             self.submit_button.setFixedSize(100,50)
