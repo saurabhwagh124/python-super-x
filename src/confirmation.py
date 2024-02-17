@@ -1,6 +1,10 @@
 import sys
+import os
+from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+
+CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 class ConfirmationWindow(QWidget):
     def __init__(self):
@@ -8,6 +12,12 @@ class ConfirmationWindow(QWidget):
         self.setWindowTitle("Where's My Water?")
         self.setGeometry(350,150,1200,800)
         self.get_confirmation_ui()
+
+        oImage = QtGui.QImage(os.path.join(CURRENT_DIR, "water.jpg"))
+        sImage = oImage.scaled(QtCore.QSize(1200, 800))
+        palette = QtGui.QPalette()
+        palette.setBrush(QtGui.QPalette.Window, QtGui.QBrush(sImage))
+        self.setPalette(palette)
 
     def get_confirmation_ui(self):
 
