@@ -31,7 +31,7 @@ class ComfirmedDetails(QWidget):
         self.comfirmed_window=QFormLayout()
 
        
-        
+      
         
 
          # creating labels
@@ -70,6 +70,9 @@ class ComfirmedDetails(QWidget):
         # creating LineEdits
         self.comf_quantity_line = QLineEdit()
         self.comf_quantity_line.setGeometry(0,0,200,60)
+    
+        
+        
         self.comf_name_line = QLineEdit()
         self.comf_name_line.setGeometry(0,0,200,60)
         self.comf_phone_line = QLineEdit()

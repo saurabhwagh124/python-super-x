@@ -26,6 +26,14 @@ class LocationWindow(QWidget):
 
         #adding button
         submit_button = QPushButton("Submit")
+        submit_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
         submit_button.setFixedSize(100,40)
         submit_button.setFont(QFont('Arial',12))
 

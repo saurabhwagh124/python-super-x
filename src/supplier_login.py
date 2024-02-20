@@ -41,6 +41,26 @@ class SupplierWindow(QWidget):
         sup_signup_button.setFixedSize(100,40)
         sup_signup_button.setFont(QFont('Arial',12))
 
+        #button theme
+
+        sup_login_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        
+        sup_signup_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+
         #creating boxes
         sup_u_name_box = QHBoxLayout()
         sup_u_name_box.setContentsMargins(400,250,400,0)
@@ -69,7 +89,7 @@ class SupplierWindow(QWidget):
 
 
 
-# app = QApplication(sys.argv)
-# ex = SupplierWindow()
-# ex.show()
-# sys.exit(app.exec_())
+#app = QApplication(sys.argv)
+#ex = SupplierWindow()
+#ex.show()
+#sys.exit(app.exec_())

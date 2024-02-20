@@ -14,6 +14,24 @@ class TankerDrinkingWindow(QWidget):
         tanker_button = QPushButton("Need a Tanker ?")
         drinking_button = QPushButton("Need Drinking Water ?")
 
+        tanker_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        
+        drinking_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+
         tanker_button.setFixedSize(220,60)
         drinking_button.setFixedSize(220,60)
 

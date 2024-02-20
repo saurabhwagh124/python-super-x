@@ -4,7 +4,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from register_page import *
 from supplier_login import *
-from Post_Login_Window import *
+from tanker_drinking_water import *
 
 
 class MainWindow(QMainWindow):
@@ -17,7 +17,7 @@ class MainWindow(QMainWindow):
 
         self.obj_register = RegisterWindow()
         self.obj_supplier = SupplierWindow()
-        self.obj_tanker_drinking = PostLoginWindow()
+        self.obj_tanker_drinking = TankerDrinkingWindow()
 
         self.center_widget = QWidget()
         self.setCentralWidget(self.center_widget)
@@ -73,6 +73,32 @@ class MainWindow(QMainWindow):
         admin_button.setFixedSize(100,40)
         admin_button.setFont(QFont("Arial",12))
 
+        #button theme
+
+        login_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        signup_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        admin_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
 
         #creating boxes
         username_box = QHBoxLayout()

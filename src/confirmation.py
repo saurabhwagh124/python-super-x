@@ -2,6 +2,8 @@ import sys
 from comformed import*
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
+from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtWidgets import QWidget
 
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -36,8 +38,29 @@ class ConfirmationWindow(QWidget):
         con_date  = QLabel("Select Date: ")
         con_time = QLabel("Select Time: ")
 
+        # settind font size and style
+        con_quantity.setFont(QFont('Arial',12 )) 
+        con_name.setFont(QFont('Arial',12 )) 
+        con_phone.setFont(QFont('Arial',12 )) 
+        con_address.setFont(QFont('Arial',12 )) 
+        con_date.setFont(QFont('Arial',12 )) 
+        con_time.setFont(QFont('Arial',12 )) 
+
+       
+      
+       
+
          #creating buttons  
         self.submit_button = QPushButton("Submit")
+        self.submit_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+      
         self.submit_button.setFixedSize(100,50)
         self.submit_button.setFont(QFont('Arial', 15))
         submit_box = QVBoxLayout()
@@ -56,6 +79,16 @@ class ConfirmationWindow(QWidget):
         self.con_phone_line = QLineEdit()
         self.con_phone_line.setMaxLength(10)
         self.con_address_line = QLineEdit()
+
+         #setting fixed sized of textbox
+
+        self.con_quantity_line.setFixedSize(500,40)
+        self.con_name_line.setFixedSize(500,40)
+        self.con_phone_line.setFixedSize(500,40)
+        self.con_address_line.setFixedSize(500,40)
+        
+        
+
 
         #creating boxes
         quantity_box = QHBoxLayout()

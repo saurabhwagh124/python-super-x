@@ -60,6 +60,14 @@ class RegisterWindow(QWidget):
 
             self.submit_button = QPushButton("Submit")
             self.submit_button.setFixedSize(100,50)
+            self.submit_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
 
             # changins size of text in button
 
