@@ -39,6 +39,8 @@ class RegisterWindow(QWidget):
             user_line = QLineEdit()
             user_line.setGeometry(0,0,200,60)
             pass_line = QLineEdit()
+            pass_line.setEchoMode(QLineEdit.Password)
+
             pass_line.setGeometry(0,0,200,60)
 
             # setting size of text box

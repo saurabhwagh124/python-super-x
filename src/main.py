@@ -77,6 +77,8 @@ class MainWindow(QMainWindow):
         username_line.setGeometry(0,0,200,60)
         username_line.setFont(QFont("Arial",12))
         password_line = QLineEdit()
+        password_line.setEchoMode(QLineEdit.Password)
+
         password_line.setGeometry(0,0,200,60)
         password_line.setFont(QFont("Arial",12))
 
