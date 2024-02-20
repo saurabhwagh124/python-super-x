@@ -43,10 +43,10 @@ class RegisterWindow(QWidget):
 
             # setting size of text box
 
-            name_line.setFixedSize(500,40)
-            phone_line.setFixedSize(500,40)
-            user_line.setFixedSize(500,40)
-            pass_line.setFixedSize(500,40)
+            name_line.setFixedSize(400,40)
+            phone_line.setFixedSize(400,40)
+            user_line.setFixedSize(400,40)
+            pass_line.setFixedSize(400,40)
 
             #setting fontsize of text inside text box
 
@@ -77,13 +77,13 @@ class RegisterWindow(QWidget):
             #creating boxes
 
             name_box =QHBoxLayout()
-            name_box.setContentsMargins(430,250,400,0)
+            name_box.setContentsMargins(300,250,400,0)
             phone_box=QHBoxLayout()
-            phone_box.setContentsMargins(400,0,400,0)
+            phone_box.setContentsMargins(270,0,400,0)
             user_box=QHBoxLayout()
-            user_box.setContentsMargins(400,0,400,0)
+            user_box.setContentsMargins(270,0,400,0)
             pass_box=QHBoxLayout()
-            pass_box.setContentsMargins(400,0,400,0)
+            pass_box.setContentsMargins(270,0,400,0)
             submit_box = QVBoxLayout()
 
 
