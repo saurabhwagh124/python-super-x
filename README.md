@@ -1,4 +1,23 @@
 # Python-Super-X
+Date: 18/02/24
+1. Submit button created in confirmation
+2. text value transfer to confored page
+3. alignment of conformed remaining
+Date: 17/02/24
+1. Attached background to Confirmation windows -Nachiket 
+2. Attached background to Post_Login_Window -Nachiket 
+
+Date: 16/02/24
+1. Changed Text FontSize. -Nachiket 
+2. Changed Push Button Size. -Nachiket
+3. Fixed the variable name issue. -Nachiket
+
+Date: 16/02/24
+1. Changed FontSized
+2. Changed FontStyle to Arial
+3. Fontstyle of text in side Textbox also changed
+4. Submit button Size changed 
+- Aditya Andhale
 
 Date: 13/02/24
 1. Starting to create a layout
@@ -9,6 +28,14 @@ Date: 14/02/24
 2. Completed MainLoginPage -Saurabh
 3. Completed AdminLoginPage -Saurabh
 4. Completed confirmationpage -Saurabh
+
+Date: 15/02/24
+5. Addded all basic user dependend ui files -Saurbh
+
+Date: 13/02/24
+1. created registration page
+2. 5:40 commiting 
+3. completed Aditya
 
 ## Getting started
 

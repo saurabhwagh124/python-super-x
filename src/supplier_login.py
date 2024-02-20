@@ -1,8 +1,9 @@
 import sys 
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
-class MainWindow(QWidget):
+class SupplierWindow(QWidget):
     def __init__(self):
         super().__init__()        
         self.setWindowTitle("Where's My Water?")
@@ -10,30 +11,55 @@ class MainWindow(QWidget):
         self.setGeometry(350,150,1200,800)
         # geometry(align left, align top, width, height)
         
-        self.get_login_ui()
         #self.setLayout()
 
-    def get_login_ui(self):
+    def get_supplier_login_ui(self):
 
-        login_window = QFormLayout()
+        supplier_login_window = QFormLayout()
 
         # creating labels
         supplier_u_name_label = QLabel("Username: ")
+        supplier_u_name_label.setFont(QFont('Arial',12))
         #username_label.se
         supplier_password_label = QLabel("Password: ")
+        supplier_password_label.setFont(QFont('Arial',12))
 
         # creating LineEdits
         supplier_u_name_line = QLineEdit()
         supplier_u_name_line.setGeometry(0,0,200,60)
+        supplier_u_name_line.setFont(QFont('Arial',12))
         supplier_password_line = QLineEdit()
         supplier_password_line.setGeometry(0,0,200,60)
+        supplier_password_line.setFont(QFont('Arial',12))
 
 
         #creating buttons
         sup_login_button = QPushButton("Login")
         sup_login_button.setFixedSize(100,40)
+        sup_login_button.setFont(QFont('Arial',12))
         sup_signup_button = QPushButton("Signup")
         sup_signup_button.setFixedSize(100,40)
+        sup_signup_button.setFont(QFont('Arial',12))
+
+        #button theme
+
+        sup_login_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        
+        sup_signup_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
 
         #creating boxes
         sup_u_name_box = QHBoxLayout()
@@ -54,16 +80,16 @@ class MainWindow(QWidget):
         button_box.setAlignment(Qt.AlignCenter)        
 
         #adding elements to form layout
-        login_window.addRow(sup_u_name_box)
-        login_window.addRow(sup_password_box)
-        login_window.addRow(button_box)
-        login_window.setAlignment(Qt.AlignCenter)
-        self.setLayout(login_window)
+        supplier_login_window.addRow(sup_u_name_box)
+        supplier_login_window.addRow(sup_password_box)
+        supplier_login_window.addRow(button_box)
+        supplier_login_window.setAlignment(Qt.AlignCenter)
+        return supplier_login_window
 
 
 
 
-app = QApplication(sys.argv)
-ex = MainWindow()
-ex.show()
-sys.exit(app.exec_())
+#app = QApplication(sys.argv)
+#ex = SupplierWindow()
+#ex.show()
+#sys.exit(app.exec_())
