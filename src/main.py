@@ -1,4 +1,4 @@
-import sys 
+import sys ,os
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -22,25 +22,44 @@ class MainWindow(QMainWindow):
         self.center_widget = QWidget()
         self.setCentralWidget(self.center_widget)
         self.center_widget.setLayout(self.get_login_ui())
+        self.background()
+
         #self.setLayout()
+
+    def background(self):
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        project_dir = os.path.abspath(os.path.join(current_dir, ".."))  # Go up one directory
+
+        image_path = os.path.join(project_dir,"assets" , "water.jpg")
+        oImage = QImage(image_path)
+        sImage = oImage.scaled(1200,800)
+
+        palette = self.palette()
+        palette.setBrush(QPalette.Window, QBrush(sImage))
+        self.setPalette(palette)    
 
     def set_register_ui(self):
         print("Clicked!!!!!")
         self.reg_wid = QWidget()
         self.setCentralWidget(self.reg_wid)
         self.reg_wid.setLayout(self.obj_register.get_register_ui())
+        self.background()
+
     
     def set_supplier_ui(self):
         print("Supplier")
         self.supplier_wid = QWidget()
         self.setCentralWidget(self.supplier_wid)
         self.supplier_wid.setLayout(self.obj_supplier.get_supplier_login_ui())
+        self.background()
     
     def set_tanker_drinking_ui(self):
         print("Tanker and drinking")
         self.tank_drink_widget = QWidget()
         self.setCentralWidget(self.tank_drink_widget)
         self.tank_drink_widget.setLayout(self.obj_tanker_drinking.get_tanker_drinking_ui())
+        self.background()
 
     def get_login_ui(self):
 
