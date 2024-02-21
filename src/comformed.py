@@ -85,7 +85,7 @@ class ComfirmedDetails(QWidget):
         self.comf_address_line.setGeometry(0,0,200,60)
         self.comf_date_line = QLabel(self.str_date)
         self.comf_date_line.setGeometry(0,0,200,60)
-        self.comf_time_line = QLineEdit(self.str_time)
+        self.comf_time_line = QLabel(self.str_time)
         self.comf_time_line.setGeometry(0,0,200,60)
        
 
@@ -114,18 +114,18 @@ class ComfirmedDetails(QWidget):
              
             # creating LineEdits
 
-        self.comf_quantity_line = QLineEdit()
+        self.comf_quantity_line = QLabel(self.str_quantity)
         self.comf_quantity_line.setGeometry(0,0,500,60)
-        self.comf_name_line = QLineEdit()
+        self.comf_name_line = QLabel(self.str_name)
         self.comf_name_line.setGeometry(0,0,200,60)
-        self.comf_phone_line = QLineEdit()
+        self.comf_phone_line = QLabel(self.str_phone)
         self.comf_phone_line.setGeometry(0,0,200,60)
         
-        comf_address_line = QLineEdit()
+        comf_address_line = QLabel(self.str_address)
         comf_address_line.setGeometry(0,0,200,60)
-        comf_date_line = QLineEdit()
+        comf_date_line = QLabel(self.str_date)
         comf_date_line.setGeometry(0,0,200,60)
-        comf_time_line = QLineEdit()
+        comf_time_line = QLabel(self.str_time)
         comf_time_line.setGeometry(0,0,200,60)
 
 
