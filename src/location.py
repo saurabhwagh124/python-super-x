@@ -1,6 +1,9 @@
 import sys
+from PyQt5.QtWidgets import * 
+from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtWidgets import QWidget
 
 class LocationWindow(QWidget):
 
@@ -8,7 +11,10 @@ class LocationWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Location window")
         self.setGeometry(350,150,1200,800)
-        self.LocationWindow_Ui()
+        self.saurab_water_button = QPushButton("Order")
+        self.nachiket_water_button = QPushButton("Order")
+        self.aditya_water_button = QPushButton("Order")
+        self.submit_button = QPushButton("Submit")
 
     def LocationWindow_Ui(self):
         
@@ -20,22 +26,25 @@ class LocationWindow(QWidget):
         water_provider2 = QLabel("2.Nachiket Water provider")
         water_provider3 = QLabel("3.Aditya Waters")
 
+        location_label.setFont(QFont('Arial',14))
+        water_provider1.setFont(QFont('Arial',14))
+        water_provider2.setFont(QFont('Arial',14))
+        water_provider3.setFont(QFont('Arial',14))
+
         
         #adding textarea
         location_line = QLineEdit()
         location_line.setGeometry(0,0,200,60)
 
         #adding button
-        submit_button = QPushButton("Submit")
-        submit_button.setFixedSize(100,40)
-
-        saurab_water_button = QPushButton("Order")
-        nachiket_water_button = QPushButton("Order")
-        aditya_water_button = QPushButton("Order")
         
-        saurab_water_button.setFixedSize(100,40)
-        nachiket_water_button.setFixedSize(100,40)
-        aditya_water_button.setFixedSize(100,40)
+        self.submit_button.setFixedSize(100,40)
+
+        
+        
+        self.saurab_water_button.setFixedSize(100,40)
+        self.nachiket_water_button.setFixedSize(100,40)
+        self.aditya_water_button.setFixedSize(100,40)
         #creating boxes
         location_box = QHBoxLayout()
         location_box.setContentsMargins(300,250,300,0)
@@ -51,16 +60,16 @@ class LocationWindow(QWidget):
         #adding element in the box
         location_box.addWidget(location_label)
         location_box.addWidget(location_line)
-        location_box.addWidget(submit_button)
+        location_box.addWidget(self.submit_button)
         
         saurab_water_box.addWidget(water_provider1)
-        saurab_water_box.addWidget(saurab_water_button)
+        saurab_water_box.addWidget(self.saurab_water_button)
 
         nachiket_water_box.addWidget(water_provider2)
-        nachiket_water_box.addWidget(nachiket_water_button)
+        nachiket_water_box.addWidget(self.nachiket_water_button)
         
         aditya_water_box.addWidget(water_provider3)
-        aditya_water_box.addWidget(aditya_water_button)
+        aditya_water_box.addWidget(self.aditya_water_button)
 
 
 
@@ -71,80 +80,15 @@ class LocationWindow(QWidget):
         Location_window.addRow(nachiket_water_box)
         Location_window.addRow(aditya_water_box)
 
-        self.setLayout(Location_window)
-        
-
-
-
-
-
-        #Adding fonts
-        font = self.font()
-        font.setFamily("Roboto")
-        font.setPointSize(14)
-        self.setFont(font)
-
-
-
-
-app = QApplication(sys.argv)
-obj = LocationWindow()
-obj.show()
-sys.exit(app.exec_())
-import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-
-class LocationWindow(QWidget):
-
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Location window")
-        self.setGeometry(350,150,1200,800)
-        # self.LocationWindow_Ui()
-
-    def LocationWindow_Ui(self):
-        
-        Location_window = QFormLayout()
-
-        #creating labels
-        location_label = QLabel("Location : ")
-        location_label.setFont(QFont('Arial',12))
-        
-        #adding textarea
-        location_line = QLineEdit()
-        location_line.setGeometry(0,0,200,60)
-        location_line.setFont(QFont('Arial',12))
-
-        #adding button
-        submit_button = QPushButton("Submit")
-        submit_button.setStyleSheet("QPushButton::hover"
-                     "{"
-                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
-                     "}"
-                     "QPushButton"
-                             "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
-                             "}")
-        submit_button.setFixedSize(100,40)
-        submit_button.setFont(QFont('Arial',12))
-
-        #creating boxes
-        location_box = QHBoxLayout()
-        location_box.setContentsMargins(420,250,400,0)
-
-
-        #adding element in the box
-        location_box.addWidget(location_label)
-        location_box.addWidget(location_line)
-        location_box.addWidget(submit_button)
-        
-        #adding layout
-        Location_window.addRow(location_box)
         return Location_window
         
-# app = QApplication(sys.argv)
-# obj = LocationWindow()
-# obj.show()
-# sys.exit(app.exec_())
+
+
+
+
+
+        
+
+
+
+

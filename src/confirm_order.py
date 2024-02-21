@@ -1,35 +1,20 @@
 import sys
-from comformed import*
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
-from PyQt5.QtCore import Qt,QSize
-from PyQt5.QtWidgets import QWidget
-
-import os
-from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QWidget
 
-CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 
-class ConfirmationWindow(QWidget):
+class ConfirmOrderWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Where's My Water?")
         self.setGeometry(350,150,1200,800)
-        self.get_confirmation_ui()
-        self.comformedPage=ComfirmedDetails()
 
-        oImage = QtGui.QImage(os.path.join(CURRENT_DIR, "water2.jpg"))
-        sImage = oImage.scaled(QtCore.QSize(1200, 800))
-        palette = QtGui.QPalette()
-        palette.setBrush(QtGui.QPalette.Window, QtGui.QBrush(sImage))
-        self.setPalette(palette)
-
-    def get_confirmation_ui(self):
+    def get_confirm_order_ui(self):
 
         confirmation_window = QFormLayout()
-
         #creating labels 
         con_quantity = QLabel("Quantity of water needed: ")
         con_name =  QLabel("Name: ")
@@ -46,10 +31,6 @@ class ConfirmationWindow(QWidget):
         con_date.setFont(QFont('Arial',12 )) 
         con_time.setFont(QFont('Arial',12 )) 
 
-       
-      
-       
-
          #creating buttons  
         self.submit_button = QPushButton("Submit")
         self.submit_button.setStyleSheet("QPushButton::hover"
@@ -65,9 +46,9 @@ class ConfirmationWindow(QWidget):
         self.submit_button.setFont(QFont('Arial', 15))
         submit_box = QVBoxLayout()
         submit_box.addWidget(self.submit_button)
-        submit_box.setAlignment(Qt.AlignRight)
+        submit_box.setAlignment(Qt.AlignCenter)
         self.submit_button.move(60, -100)
-        self.submit_button.clicked.connect(self.passingInformation)
+        # self.submit_button.clicked.connect(self.passingInformation)
         confirmation_window.addWidget(self.submit_button)
         
 
@@ -111,8 +92,17 @@ class ConfirmationWindow(QWidget):
         time_box.setContentsMargins(250,0,250,0)
 
         # calendar widget
-        con_calender = QCalendarWidget()
-        con_calender.setGeometry(0,0,100,100)
+        con_calender = QDateEdit()
+        con_calender.setGeometry(100,100,500,100)
+        set_date = QDate.currentDate()
+        con_calender.setDate(set_date)
+
+        #time widget
+        con_clock = QTimeEdit()
+        con_clock.setGeometry(100,100,500,100)
+        set_time = QTime.currentTime()
+        con_clock.setTime(set_time)
+
         #adding elements into boxes
         quantity_box.addWidget(con_quantity)
         quantity_box.addWidget(self.con_quantity_line)
@@ -131,6 +121,7 @@ class ConfirmationWindow(QWidget):
         date_box.addWidget(con_calender)
         
         time_box.addWidget(con_time)
+        time_box.addWidget(con_clock)
 
         #adding elements to the layout
         confirmation_window.addRow(quantity_box)
@@ -142,24 +133,5 @@ class ConfirmationWindow(QWidget):
         confirmation_window.addRow(submit_box)
         
         
-        self.setLayout(confirmation_window)
+        return confirmation_window
 
-        #Adding fonts
-        font = self.font()
-        font.setFamily("Roboto")
-        font.setPointSize(14)
-        self.setFont(font)
-        
-         #changed
-    def passingInformation(self): 
-        self.comformedPage.comf_quantity_line.setText(self.con_quantity_line.text())
-        self.comformedPage.comf_name_line.setText(self.con_name_line.text())
-        self.comformedPage.comf_phone_line.setText(self.con_phone_line.text())
-        self.comformedPage.comf_address_line.setText(self.con_address_line.text())
-        self.comformedPage.displayInfo()
-
-
-app = QApplication(sys.argv)
-ex = ConfirmationWindow()
-ex.show()
-sys.exit(app.exec_())

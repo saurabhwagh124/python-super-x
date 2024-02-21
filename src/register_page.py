@@ -10,6 +10,7 @@ class RegisterWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Register here")
         self.setGeometry(350,150,1200,800)
+        self.submit_button = QPushButton("Submit")
 
      def get_register_ui(self):
             register_window=QFormLayout()
@@ -60,7 +61,7 @@ class RegisterWindow(QWidget):
 
             #creating submit button ...................
 
-            self.submit_button = QPushButton("Submit")
+            
             self.submit_button.setFixedSize(100,50)
             self.submit_button.setStyleSheet("QPushButton::hover"
                      "{"

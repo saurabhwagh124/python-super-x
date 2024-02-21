@@ -7,14 +7,15 @@ class TankerDrinkingWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Where's my Water")
         self.setGeometry(350,150,1200,800)
+        self.tanker_button= QPushButton("Need a Tanker ?")
+        self.drinking_button = QPushButton("Need Drinking Water ?")
         
     def get_tanker_drinking_ui(self):
         tanker_drinking_layout = QVBoxLayout()
 
-        tanker_button = QPushButton("Need a Tanker ?")
-        drinking_button = QPushButton("Need Drinking Water ?")
+        
 
-        tanker_button.setStyleSheet("QPushButton::hover"
+        self.tanker_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
                      "}"
@@ -23,7 +24,7 @@ class TankerDrinkingWindow(QWidget):
                              "background-color : lightblue;border-radius: 10px ;border-style: outset;"
                              "}")
         
-        drinking_button.setStyleSheet("QPushButton::hover"
+        self.drinking_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
                      "}"
@@ -32,16 +33,16 @@ class TankerDrinkingWindow(QWidget):
                              "background-color : lightblue;border-radius: 10px ;border-style: outset;"
                              "}")
 
-        tanker_button.setFixedSize(220,60)
-        drinking_button.setFixedSize(220,60)
+        self.tanker_button.setFixedSize(220,60)
+        self.drinking_button.setFixedSize(220,60)
 
-        font = tanker_button.font()
+        font = self.tanker_button.font()
         font.setPointSize(12)  
-        tanker_button.setFont(font)
+        self.tanker_button.setFont(font)
 
-        font = drinking_button.font()
+        font = self.drinking_button.font()
         font.setPointSize(12)  
-        drinking_button.setFont(font)
+        self.drinking_button.setFont(font)
 
         or_text = QLabel("Or" , self)
         
@@ -49,8 +50,8 @@ class TankerDrinkingWindow(QWidget):
         or_text.setAlignment(Qt.AlignCenter)
         or_text.setStyleSheet("font-size: 20px;")
 
-        tanker_drinking_layout.addWidget(tanker_button)
+        tanker_drinking_layout.addWidget(self.tanker_button)
         tanker_drinking_layout.addWidget(or_text)
-        tanker_drinking_layout.addWidget(drinking_button)
+        tanker_drinking_layout.addWidget(self.drinking_button)
 
         return tanker_drinking_layout

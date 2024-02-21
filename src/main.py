@@ -5,6 +5,8 @@ from PyQt5.QtGui import *
 from register_page import *
 from supplier_login import *
 from tanker_drinking_water import *
+from location import *
+from confirm_order import *
 
 
 class MainWindow(QMainWindow):
@@ -13,11 +15,13 @@ class MainWindow(QMainWindow):
         print("Calling constructor")
         self.setWindowTitle("Where's My Water")
         self.setGeometry(350,150,1200,800)
-        # geometry(align left, align top, width, height)
+        # geometry(align left, align top, width, height)        
 
         self.obj_register = RegisterWindow()
         self.obj_supplier = SupplierWindow()
         self.obj_tanker_drinking = TankerDrinkingWindow()
+        self.obj_location = LocationWindow()
+        self.obj_confirmation_order = ConfirmOrderWindow()
 
         self.center_widget = QWidget()
         self.setCentralWidget(self.center_widget)
@@ -37,7 +41,12 @@ class MainWindow(QMainWindow):
 
         palette = self.palette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
-        self.setPalette(palette)    
+        self.setPalette(palette) 
+
+    def get_login_again(self):
+        self.login_after_register = QWidget()
+        self.setCentralWidget(self.login_after_register)
+        self.login_after_register.setLayout(self.get_login_ui())   
 
     def set_register_ui(self):
         print("Clicked!!!!!")
@@ -61,6 +70,17 @@ class MainWindow(QMainWindow):
         self.tank_drink_widget.setLayout(self.obj_tanker_drinking.get_tanker_drinking_ui())
         self.background()
 
+    def set_widget_to_layout(self):
+        self.main_central_widget = QWidget()
+        self.setCentralWidget(self.main_central_widget)
+        self.main_central_widget.setLayout(self.obj_location.LocationWindow_Ui())
+
+    def set_order_layout_ui(self):
+        self.order_widget = QWidget()
+        self.setCentralWidget(self.order_widget)
+        self.order_widget.setLayout(self.obj_confirmation_order.get_confirm_order_ui())
+
+
     def get_login_ui(self):
 
         login_window = QFormLayout()
@@ -68,7 +88,7 @@ class MainWindow(QMainWindow):
         # creating labels
         username_label = QLabel("Username: ")
         username_label.setFont(QFont("Arial",12))
-        #username_label.se
+        
         password_label = QLabel("Password: ")
         password_label.setFont(QFont("Arial",12))
 
@@ -155,6 +175,17 @@ class MainWindow(QMainWindow):
         signup_button.clicked.connect(lambda: self.set_register_ui())
         admin_button.clicked.connect(lambda: self.set_supplier_ui())
         login_button.clicked.connect(lambda: self.set_tanker_drinking_ui())
+        self.obj_register.submit_button.clicked.connect(lambda: self.get_login_again())
+        
+        # tanker_drinking connections
+        self.obj_tanker_drinking.tanker_button.clicked.connect(lambda: self.set_widget_to_layout())
+        self.obj_tanker_drinking.drinking_button.clicked.connect(lambda: self.set_widget_to_layout())
+
+        #location and order buttons
+        self.obj_location.aditya_water_button.clicked.connect(lambda: self.set_order_layout_ui())
+        self.obj_location.nachiket_water_button.clicked.connect(lambda: self.set_order_layout_ui())
+        self.obj_location.saurab_water_button.clicked.connect(lambda: self.set_order_layout_ui())       
+
         
         return login_window
      
