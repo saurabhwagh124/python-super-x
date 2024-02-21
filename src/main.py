@@ -114,7 +114,7 @@ class MainWindow(QMainWindow):
 
         # creating LineEdits
         username_line = QLineEdit()
-        # username_line.placeholderText("Enter the username")
+        username_line.setPlaceholderText("Enter your username")
         username_line.setGeometry(0,0,200,60)
         username_line.setFont(QFont("Arial",12))
         username_line.setStyleSheet("border :1px solid cyan;"
@@ -123,6 +123,8 @@ class MainWindow(QMainWindow):
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
         password_line = QLineEdit()
+        password_line.setPlaceholderText("Enter your password")
+
         password_line.setEchoMode(QLineEdit.Password)
        
         password_line.setGeometry(0,0,200,60)

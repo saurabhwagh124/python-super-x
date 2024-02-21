@@ -57,10 +57,15 @@ class ConfirmOrderWindow(QWidget):
 
         #creating line edits
         self.con_quantity_line  = QLineEdit()
+        self.con_quantity_line.setPlaceholderText("Enter the quantity of water")
         self.con_name_line = QLineEdit()
+        self.con_name_line.setPlaceholderText("Enter your name")
         self.con_phone_line = QLineEdit()
+        self.con_phone_line.setPlaceholderText("Enter your phone no.")
         self.con_phone_line.setMaxLength(10)
         self.con_address_line = QLineEdit()
+        self.con_address_line.setPlaceholderText("Enter your address")
+
 
          #setting fixed sized of textbox
 

@@ -70,6 +70,8 @@ class LocationWindow(QWidget):
         
         #adding textarea   ########
         location_line = QLineEdit()
+        location_line.setPlaceholderText("Enter your location")
+
         location_line.setGeometry(0,0,200,60)
         location_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"

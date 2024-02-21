@@ -33,15 +33,18 @@ class RegisterWindow(QWidget):
             # creating LineEdits
 
             name_line = QLineEdit()
+            name_line.setPlaceholderText("Enter your name")
             # name_line.placeholderText("enter")
             name_line.setGeometry(0,0,200,60)
             phone_line = QLineEdit()
+            phone_line.setPlaceholderText("Enter your phone no.")
             phone_line.setGeometry(0,0,200,60)
             user_line = QLineEdit()
+            user_line.setPlaceholderText("Enter your username")
             user_line.setGeometry(0,0,200,60)
             pass_line = QLineEdit()
+            pass_line.setPlaceholderText("Enter your password")
             pass_line.setEchoMode(QLineEdit.Password)
-
             pass_line.setGeometry(0,0,200,60)
 
             # setting size of text box
