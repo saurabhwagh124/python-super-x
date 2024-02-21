@@ -1,6 +1,12 @@
+
+
 import sys
-from PyQt5.QtCore import *
+from PyQt5.QtWidgets import * 
+from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtWidgets import QWidget
+
 
 class SupplierOrders(QWidget):
 
@@ -9,6 +15,15 @@ class SupplierOrders(QWidget):
         self.setWindowTitle("Where's my water")
         self.setGeometry(350,150,1200,800)
         self.next_button = QPushButton("Next")
+        self.next_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.next_button.setFont(QFont('Arial', 15))
         self.name = "xyz"
         self.no = "123"
         self.address = "Abc"

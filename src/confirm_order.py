@@ -68,6 +68,29 @@ class ConfirmOrderWindow(QWidget):
         self.con_name_line.setFixedSize(300,40)
         self.con_phone_line.setFixedSize(300,40)
         self.con_address_line.setFixedSize(300,40)
+
+        #curves
+
+        self.con_quantity_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+        self.con_name_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+        self.con_phone_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+        self.con_address_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
         
         
 

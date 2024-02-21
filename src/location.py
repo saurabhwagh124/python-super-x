@@ -12,9 +12,45 @@ class LocationWindow(QWidget):
         self.setWindowTitle("Location window")
         self.setGeometry(350,150,1200,800)
         self.saurab_water_button = QPushButton("Order")
+        self.saurab_water_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.saurab_water_button.setFont(QFont('Arial', 15))
         self.nachiket_water_button = QPushButton("Order")
+        self.nachiket_water_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.nachiket_water_button.setFont(QFont('Arial', 15))
         self.aditya_water_button = QPushButton("Order")
+        self.aditya_water_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.aditya_water_button.setFont(QFont('Arial', 15))
         self.submit_button = QPushButton("Submit")
+        self.submit_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.submit_button.setFont(QFont('Arial', 15))
 
     def LocationWindow_Ui(self):
         
@@ -32,9 +68,14 @@ class LocationWindow(QWidget):
         water_provider3.setFont(QFont('Arial',14))
 
         
-        #adding textarea
+        #adding textarea   ########
         location_line = QLineEdit()
         location_line.setGeometry(0,0,200,60)
+        location_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
 
         #adding button
         

@@ -28,12 +28,12 @@ class RegisterWindow(QWidget):
             user_label.setFont(QFont('Arial',12 )) 
             pass_label.setFont(QFont('Arial',12 )) 
 
-            
 
                
             # creating LineEdits
 
             name_line = QLineEdit()
+            # name_line.placeholderText("enter")
             name_line.setGeometry(0,0,200,60)
             phone_line = QLineEdit()
             phone_line.setGeometry(0,0,200,60)
@@ -50,6 +50,30 @@ class RegisterWindow(QWidget):
             phone_line.setFixedSize(400,40)
             user_line.setFixedSize(400,40)
             pass_line.setFixedSize(400,40)
+##################################################################
+            name_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+            phone_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+            user_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+            pass_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+
+
+
 
             #setting fontsize of text inside text box
 
@@ -75,6 +99,7 @@ class RegisterWindow(QWidget):
             # changins size of text in button
 
             self.submit_button.setFont(QFont('Arial', 15))
+
 
 
             #creating boxes

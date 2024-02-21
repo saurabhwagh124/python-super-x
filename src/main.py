@@ -114,13 +114,24 @@ class MainWindow(QMainWindow):
 
         # creating LineEdits
         username_line = QLineEdit()
+        # username_line.placeholderText("Enter the username")
         username_line.setGeometry(0,0,200,60)
         username_line.setFont(QFont("Arial",12))
+        username_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
         password_line = QLineEdit()
         password_line.setEchoMode(QLineEdit.Password)
-
+       
         password_line.setGeometry(0,0,200,60)
         password_line.setFont(QFont("Arial",12))
+        password_line.setStyleSheet("border :2px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
 
 
         #creating buttons
@@ -133,6 +144,11 @@ class MainWindow(QMainWindow):
         admin_button = QPushButton("Supplier")
         admin_button.setFixedSize(100,40)
         admin_button.setFont(QFont("Arial",12))
+
+
+        
+
+
 
         #button theme
 

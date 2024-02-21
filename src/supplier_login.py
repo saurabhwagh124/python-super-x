@@ -33,6 +33,19 @@ class SupplierWindow(QWidget):
         supplier_password_line.setGeometry(0,0,200,60)
         supplier_password_line.setFont(QFont('Arial',12))
 
+        #curves
+
+        supplier_u_name_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+        supplier_password_line.setStyleSheet("border :1px solid cyan;"
+                                   "border-top-left-radius :15px;"
+                                   " border-top-right-radius : 15px; "
+                                   "border-bottom-left-radius : 15px; "
+                                   "border-bottom-right-radius : 15px") 
+
 
         #creating buttons
         
@@ -52,6 +65,7 @@ class SupplierWindow(QWidget):
                              "{"
                              "background-color : lightblue;border-radius: 10px ;border-style: outset;"
                              "}")
+        
         
         self.sup_signup_button.setStyleSheet("QPushButton::hover"
                      "{"
