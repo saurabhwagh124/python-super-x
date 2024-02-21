@@ -63,7 +63,7 @@ class SupplierWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         
         
@@ -73,7 +73,7 @@ class SupplierWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
         #creating boxes

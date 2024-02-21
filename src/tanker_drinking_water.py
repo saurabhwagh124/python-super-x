@@ -21,7 +21,7 @@ class TankerDrinkingWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         
         self.drinking_button.setStyleSheet("QPushButton::hover"
@@ -30,7 +30,7 @@ class TankerDrinkingWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
         self.tanker_button.setFixedSize(220,60)

@@ -18,7 +18,7 @@ class LocationWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.saurab_water_button.setFont(QFont('Arial', 15))
         self.nachiket_water_button = QPushButton("Order")
@@ -28,7 +28,7 @@ class LocationWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.nachiket_water_button.setFont(QFont('Arial', 15))
         self.aditya_water_button = QPushButton("Order")
@@ -38,7 +38,7 @@ class LocationWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.aditya_water_button.setFont(QFont('Arial', 15))
         self.submit_button = QPushButton("Submit")
@@ -48,7 +48,7 @@ class LocationWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.submit_button.setFont(QFont('Arial', 15))
 

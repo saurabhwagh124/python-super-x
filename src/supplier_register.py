@@ -80,7 +80,7 @@ class SupplierRegister(QWidget):
                     "}"
                     "QPushButton"
                             "{"
-                            "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                            "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                             "}")
 
         # changins size of text in button

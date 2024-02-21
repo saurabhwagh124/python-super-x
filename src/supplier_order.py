@@ -15,13 +15,14 @@ class SupplierOrders(QWidget):
         self.setWindowTitle("Where's my water")
         self.setGeometry(350,150,1200,800)
         self.next_button = QPushButton("Next")
+        self.next_button.setFixedSize(100,50)
         self.next_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.next_button.setFont(QFont('Arial', 15))
         self.name = "xyz"
@@ -35,11 +36,18 @@ class SupplierOrders(QWidget):
         self.orders_layout = QGridLayout()
 
         self.const_name = QLabel("Name: ")
+        self.const_name.setFont(QFont('Arial',12 ))
         self.const_phone = QLabel("Phone: ")
+        self.const_phone.setFont(QFont('Arial',12 ))
         self.const_address = QLabel("Address: ")
+        self.const_address.setFont(QFont('Arial',12 ))
         self.const_quantity = QLabel("Quantity")
+        self.const_quantity.setFont(QFont('Arial',12 ))
         self.const_date = QLabel("Date: ")
+        self.const_date.setFont(QFont('Arial',12 ))
+
         self.const_time = QLabel("Time: ")
+        self.const_time.setFont(QFont('Arial',12 ))
 
         self.get_name = QLabel(self.name)
         self.get_no = QLabel(self.no)

@@ -158,7 +158,7 @@ class MainWindow(QMainWindow):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         signup_button.setStyleSheet("QPushButton::hover"
                      "{"
@@ -166,7 +166,7 @@ class MainWindow(QMainWindow):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         admin_button.setStyleSheet("QPushButton::hover"
                      "{"
@@ -174,7 +174,7 @@ class MainWindow(QMainWindow):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
         #creating boxes

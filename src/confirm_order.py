@@ -40,7 +40,7 @@ class ConfirmOrderWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
       
         self.submit_button.setFixedSize(100,50)
