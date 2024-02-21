@@ -20,6 +20,13 @@ class ComfirmedDetails(QWidget):
          
         # setting  the fixed width of window
         self.setFixedHeight(height)
+        self.str_quantity=" sample quantity"
+        self.str_name=" sample time"
+        self.str_phone=" sample phone"
+        self.str_address=" sample address"
+        self.str_date=" sample date"
+        self.str_time= " sample time"
+    
  
 
         self.displayInfo()
@@ -68,21 +75,19 @@ class ComfirmedDetails(QWidget):
         
 
         # creating LineEdits
-        self.comf_quantity_line = QLineEdit()
+        self.comf_quantity_line = QLabel(self.str_quantity)#####
         self.comf_quantity_line.setGeometry(0,0,200,60)
-    
-        
-        
-        self.comf_name_line = QLineEdit()
+        self.comf_name_line = QLabel(self.str_name)
         self.comf_name_line.setGeometry(0,0,200,60)
-        self.comf_phone_line = QLineEdit()
+        self.comf_phone_line = QLabel(self.str_phone)
         self.comf_phone_line.setGeometry(0,0,200,60)
-        self.comf_address_line = QLineEdit()
+        self.comf_address_line = QLabel(self.str_address)
         self.comf_address_line.setGeometry(0,0,200,60)
-        self.comf_date_line = QLineEdit()
+        self.comf_date_line = QLabel(self.str_date)
         self.comf_date_line.setGeometry(0,0,200,60)
-        self.comf_time_line = QLineEdit()
+        self.comf_time_line = QLineEdit(self.str_time)
         self.comf_time_line.setGeometry(0,0,200,60)
+       
 
         
         self.comf_quantity_line.setFixedSize(500,40)
@@ -208,11 +213,7 @@ class ComfirmedDetails(QWidget):
         self.comfirmed_window.addRow(self.comf_time_box)
         self.comfirmed_window.setAlignment(Qt.AlignCenter)
 
-        
-        self.setLayout(self.comfirmed_window)
-
-    
-        self.show()
+        return self.comfirmed_window 
 
        
 
