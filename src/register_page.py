@@ -34,7 +34,7 @@ class RegisterWindow(QWidget):
             # creating LineEdits
 
             name_line = QLineEdit()
-            name_line.setGeometry(0,0,500,60)
+            name_line.setGeometry(0,0,200,60)
             phone_line = QLineEdit()
             phone_line.setGeometry(0,0,200,60)
             user_line = QLineEdit()

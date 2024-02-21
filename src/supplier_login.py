@@ -10,7 +10,8 @@ class SupplierWindow(QWidget):
         
         self.setGeometry(350,150,1200,800)
         # geometry(align left, align top, width, height)
-        
+        self.sup_login_button = QPushButton("Login")
+        self.sup_signup_button = QPushButton("Signup")
         #self.setLayout()
 
     def get_supplier_login_ui(self):
@@ -34,16 +35,16 @@ class SupplierWindow(QWidget):
 
 
         #creating buttons
-        sup_login_button = QPushButton("Login")
-        sup_login_button.setFixedSize(100,40)
-        sup_login_button.setFont(QFont('Arial',12))
-        sup_signup_button = QPushButton("Signup")
-        sup_signup_button.setFixedSize(100,40)
-        sup_signup_button.setFont(QFont('Arial',12))
+        
+        self.sup_login_button.setFixedSize(100,40)
+        self.sup_login_button.setFont(QFont('Arial',12))
+        
+        self.sup_signup_button.setFixedSize(100,40)
+        self.sup_signup_button.setFont(QFont('Arial',12))
 
         #button theme
 
-        sup_login_button.setStyleSheet("QPushButton::hover"
+        self.sup_login_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
                      "}"
@@ -52,7 +53,7 @@ class SupplierWindow(QWidget):
                              "background-color : lightblue;border-radius: 10px ;border-style: outset;"
                              "}")
         
-        sup_signup_button.setStyleSheet("QPushButton::hover"
+        self.sup_signup_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
                      "}"
@@ -75,8 +76,8 @@ class SupplierWindow(QWidget):
         sup_password_box.addWidget(supplier_password_label)
         sup_password_box.addWidget(supplier_password_line)
 
-        button_box.addWidget(sup_login_button)
-        button_box.addWidget(sup_signup_button)
+        button_box.addWidget(self.sup_login_button)
+        button_box.addWidget(self.sup_signup_button)
         button_box.setAlignment(Qt.AlignCenter)        
 
         #adding elements to form layout

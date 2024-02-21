@@ -11,6 +11,7 @@ class ConfirmOrderWindow(QWidget):
         super().__init__()
         self.setWindowTitle("Where's My Water?")
         self.setGeometry(350,150,1200,800)
+        self.submit_button = QPushButton("Submit")
 
     def get_confirm_order_ui(self):
 
@@ -32,7 +33,7 @@ class ConfirmOrderWindow(QWidget):
         con_time.setFont(QFont('Arial',12 )) 
 
          #creating buttons  
-        self.submit_button = QPushButton("Submit")
+        
         self.submit_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
@@ -63,10 +64,10 @@ class ConfirmOrderWindow(QWidget):
 
          #setting fixed sized of textbox
 
-        self.con_quantity_line.setFixedSize(500,40)
-        self.con_name_line.setFixedSize(500,40)
-        self.con_phone_line.setFixedSize(500,40)
-        self.con_address_line.setFixedSize(500,40)
+        self.con_quantity_line.setFixedSize(300,40)
+        self.con_name_line.setFixedSize(300,40)
+        self.con_phone_line.setFixedSize(300,40)
+        self.con_address_line.setFixedSize(300,40)
         
         
 

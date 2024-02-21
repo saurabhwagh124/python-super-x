@@ -2,11 +2,14 @@ import sys ,os
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from confirmed import confirmedDetails
 from register_page import *
 from supplier_login import *
+from supplier_register import SupplierRegister
 from tanker_drinking_water import *
 from location import *
 from confirm_order import *
+from supplier_order import *
 
 
 class MainWindow(QMainWindow):
@@ -22,6 +25,9 @@ class MainWindow(QMainWindow):
         self.obj_tanker_drinking = TankerDrinkingWindow()
         self.obj_location = LocationWindow()
         self.obj_confirmation_order = ConfirmOrderWindow()
+        self.obj_confirmed_ticket = confirmedDetails()
+        self.obj_sup_orders = SupplierOrders()
+        self.obj_sup_register = SupplierRegister()
 
         self.center_widget = QWidget()
         self.setCentralWidget(self.center_widget)
@@ -42,6 +48,11 @@ class MainWindow(QMainWindow):
         palette = self.palette()
         palette.setBrush(QPalette.Window, QBrush(sImage))
         self.setPalette(palette) 
+    
+    def set_sup_orders_ui(self):
+        self.sup_orders_widget = QWidget()
+        self.setCentralWidget(self.sup_orders_widget)
+        self.sup_orders_widget.setLayout(self.obj_sup_orders.get_supplier_orders_ui())
 
     def get_login_again(self):
         self.login_after_register = QWidget()
@@ -62,6 +73,11 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.supplier_wid)
         self.supplier_wid.setLayout(self.obj_supplier.get_supplier_login_ui())
         self.background()
+
+    def set_supplier_register_ui(self):
+        self.sup_register = QWidget()
+        self.setCentralWidget(self.sup_register)
+        self.sup_register.setLayout(self.obj_sup_register.get_supplier_register_ui())
     
     def set_tanker_drinking_ui(self):
         print("Tanker and drinking")
@@ -80,6 +96,10 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.order_widget)
         self.order_widget.setLayout(self.obj_confirmation_order.get_confirm_order_ui())
 
+    def get_final_ticket_ui(self):
+        self.final_ticket = QWidget()
+        self.setCentralWidget(self.final_ticket)
+        self.final_ticket.setLayout(self.obj_confirmed_ticket.display_ticket())
 
     def get_login_ui(self):
 
@@ -186,7 +206,16 @@ class MainWindow(QMainWindow):
         self.obj_location.nachiket_water_button.clicked.connect(lambda: self.set_order_layout_ui())
         self.obj_location.saurab_water_button.clicked.connect(lambda: self.set_order_layout_ui())       
 
+        #submit onclick of confirmed details
+        self.obj_confirmation_order.submit_button.clicked.connect(lambda: self.get_final_ticket_ui())
         
+        #supplier login on click
+        self.obj_supplier.sup_login_button.clicked.connect(lambda: self.set_sup_orders_ui())
+        self.obj_supplier.sup_signup_button.clicked.connect(lambda: self.set_supplier_register_ui())
+
+        #supplier register submit on click
+        self.obj_sup_register.submit_button.clicked.connect(lambda: self.set_supplier_ui())
+
         return login_window
      
     
