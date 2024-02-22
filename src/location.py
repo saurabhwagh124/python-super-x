@@ -69,16 +69,16 @@ class LocationWindow(QWidget):
 
         
         #adding textarea   ########
-        location_line = QLineEdit()
-        location_line.setPlaceholderText("Enter your location")
-
-        location_line.setGeometry(0,0,200,60)
-        location_line.setStyleSheet("border :1px solid cyan;"
+        self.location_line = QLineEdit()
+        self.location_line.setPlaceholderText("Enter your location")
+        self.location_line.setFixedSize(300,40)
+        self.location_line.setGeometry(0,0,200,60)
+        self.location_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-
+        self.location_line.setFont(QFont('Arial',14))
         #adding button
         
         self.submit_button.setFixedSize(100,40)
@@ -102,7 +102,7 @@ class LocationWindow(QWidget):
 
         #adding element in the box
         location_box.addWidget(location_label)
-        location_box.addWidget(location_line)
+        location_box.addWidget(self.location_line)
         location_box.addWidget(self.submit_button)
         
         saurab_water_box.addWidget(water_provider1)

@@ -32,6 +32,7 @@ class SupplierOrders(QWidget):
         self.date = "01/12/2004"
         self.time = "2:30 pm"
 
+
     def get_supplier_orders_ui(self):
         self.orders_layout = QGridLayout()
 
@@ -45,9 +46,9 @@ class SupplierOrders(QWidget):
         self.const_quantity.setFont(QFont('Arial',12 ))
         self.const_date = QLabel("Date: ")
         self.const_date.setFont(QFont('Arial',12 ))
-
         self.const_time = QLabel("Time: ")
         self.const_time.setFont(QFont('Arial',12 ))
+
 
         self.get_name = QLabel(self.name)
         self.get_no = QLabel(self.no)
@@ -55,6 +56,16 @@ class SupplierOrders(QWidget):
         self.get_quantity = QLabel(self.quantity)
         self.get_date = QLabel(self.date)
         self.get_time = QLabel(self.time)
+
+        self.get_name.setFont(QFont('Arial',12 ))
+        self.get_no.setFont(QFont('Arial',12 ))
+        self.get_address.setFont(QFont('Arial',12 ))
+        self.get_quantity.setFont(QFont('Arial',12 ))
+        self.get_date.setFont(QFont('Arial',12 ))
+        self.get_time.setFont(QFont('Arial',12 ))
+        
+        
+        
 
 
         self.orders_layout.addWidget(self.const_name,0,0)

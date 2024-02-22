@@ -58,13 +58,20 @@ class ConfirmOrderWindow(QWidget):
         #creating line edits
         self.con_quantity_line  = QLineEdit()
         self.con_quantity_line.setPlaceholderText("Enter the quantity of water")
+        self.con_quantity_line.setFont(QFont('Arial',11))
+
         self.con_name_line = QLineEdit()
         self.con_name_line.setPlaceholderText("Enter your name")
+        self.con_name_line.setFont(QFont('Arial',11))
+
         self.con_phone_line = QLineEdit()
         self.con_phone_line.setPlaceholderText("Enter your phone no.")
         self.con_phone_line.setMaxLength(10)
+        self.con_phone_line.setFont(QFont('Arial',11))
+
         self.con_address_line = QLineEdit()
         self.con_address_line.setPlaceholderText("Enter your address")
+        self.con_address_line.setFont(QFont('Arial',11))
 
 
          #setting fixed sized of textbox
@@ -121,16 +128,18 @@ class ConfirmOrderWindow(QWidget):
         time_box.setContentsMargins(250,0,250,0)
 
         # calendar widget
-        con_calender = QDateEdit()
-        con_calender.setGeometry(100,100,500,100)
+        self.con_calender = QDateEdit()
+        self.con_calender.setGeometry(100,100,500,100)
         set_date = QDate.currentDate()
-        con_calender.setDate(set_date)
+        self.con_calender.setDate(set_date)
+        self.con_calender.setFont(QFont('Arial',11))
 
         #time widget
-        con_clock = QTimeEdit()
-        con_clock.setGeometry(100,100,500,100)
+        self.con_clock = QTimeEdit()
+        self.con_clock.setGeometry(100,100,500,100)
         set_time = QTime.currentTime()
-        con_clock.setTime(set_time)
+        self.con_clock.setTime(set_time)
+        self.con_clock.setFont(QFont('Arial',11))
 
         #adding elements into boxes
         quantity_box.addWidget(con_quantity)
@@ -147,10 +156,10 @@ class ConfirmOrderWindow(QWidget):
         address_box.addWidget(self.con_address_line)
         
         date_box.addWidget(con_date)
-        date_box.addWidget(con_calender)
+        date_box.addWidget(self.con_calender)
         
         time_box.addWidget(con_time)
-        time_box.addWidget(con_clock)
+        time_box.addWidget(self.con_clock)
 
         #adding elements to the layout
         confirmation_window.addRow(quantity_box)
