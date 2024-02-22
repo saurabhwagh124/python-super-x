@@ -33,20 +33,17 @@ class RegisterWindow(QWidget):
                
             # creating LineEdits
 
-            self.name_line = QLineEdit()
-            name_string = self.name_line.text()
-            self.name_line.setGeometry(0,0,200,60)
-            self.phone_line = QLineEdit()
-            phone_string = self.phone_line.text()
-            self.phone_line.setGeometry(0,0,200,60)
-            self.user_line = QLineEdit()
-            user_string = self.user_line.text()
-            self.user_line.setGeometry(0,0,200,60)
-            self.pass_line = QLineEdit()
-            pass_string = self.pass_line.text()
-            self.pass_line.setEchoMode(QLineEdit.Password)
+            name_line = QLineEdit()
+            # name_line.placeholderText("enter")
+            name_line.setGeometry(0,0,200,60)
+            phone_line = QLineEdit()
+            phone_line.setGeometry(0,0,200,60)
+            user_line = QLineEdit()
+            user_line.setGeometry(0,0,200,60)
+            pass_line = QLineEdit()
+            pass_line.setEchoMode(QLineEdit.Password)
 
-            self.pass_line.setGeometry(0,0,200,60)
+            pass_line.setGeometry(0,0,200,60)
 
             # setting size of text box
 
@@ -97,7 +94,7 @@ class RegisterWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
             # changins size of text in button

@@ -24,12 +24,16 @@ class SupplierRegister(QWidget):
         password_label.setFont(QFont('Arial',12 )) 
 
         name_line = QLineEdit()
+        name_line.setPlaceholderText("Enter your name")
         name_line.setGeometry(0,0,200,60)
         phone_line = QLineEdit()
+        phone_line.setPlaceholderText("Enter your phone no.")
         phone_line.setGeometry(0,0,200,60)
         user_line = QLineEdit()
+        user_line.setPlaceholderText("Enter your username")
         user_line.setGeometry(0,0,200,60)
         pass_line = QLineEdit()
+        pass_line.setPlaceholderText("Enter your password")        
         pass_line.setEchoMode(QLineEdit.Password)
 
         pass_line.setGeometry(0,0,200,60)
@@ -80,7 +84,7 @@ class SupplierRegister(QWidget):
                     "}"
                     "QPushButton"
                             "{"
-                            "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                            "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                             "}")
 
         # changins size of text in button

@@ -27,9 +27,13 @@ class SupplierWindow(QWidget):
 
         # creating LineEdits
         supplier_u_name_line = QLineEdit()
+        supplier_u_name_line.setPlaceholderText("Enter your name")
+
         supplier_u_name_line.setGeometry(0,0,200,60)
         supplier_u_name_line.setFont(QFont('Arial',12))
         supplier_password_line = QLineEdit()
+        supplier_password_line.setPlaceholderText("Enter your password")
+
         supplier_password_line.setGeometry(0,0,200,60)
         supplier_password_line.setFont(QFont('Arial',12))
 
@@ -63,7 +67,7 @@ class SupplierWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         
         
@@ -73,7 +77,7 @@ class SupplierWindow(QWidget):
                      "}"
                      "QPushButton"
                              "{"
-                             "background-color : lightblue;border-radius: 10px ;border-style: outset;"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
         #creating boxes
