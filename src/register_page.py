@@ -4,7 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtWidgets import QWidget
-from Home import *
+from Home import register_to_db
 
 class RegisterWindow(QWidget):
      def __init__(self):
@@ -33,17 +33,17 @@ class RegisterWindow(QWidget):
                
             # creating LineEdits
 
-            name_line = QLineEdit()
+            self.name_line = QLineEdit()
             # name_line.placeholderText("enter")
-            name_line.setGeometry(0,0,200,60)
-            phone_line = QLineEdit()
-            phone_line.setGeometry(0,0,200,60)
-            user_line = QLineEdit()
-            user_line.setGeometry(0,0,200,60)
-            pass_line = QLineEdit()
-            pass_line.setEchoMode(QLineEdit.Password)
+            self.name_line.setGeometry(0,0,200,60)
+            self.phone_line = QLineEdit()
+            self.phone_line.setGeometry(0,0,200,60)
+            self.user_line = QLineEdit()
+            self.user_line.setGeometry(0,0,200,60)
+            self.pass_line = QLineEdit()
+            self.pass_line.setEchoMode(QLineEdit.Password)
 
-            pass_line.setGeometry(0,0,200,60)
+            self.pass_line.setGeometry(0,0,200,60)
 
             # setting size of text box
 
@@ -141,6 +141,8 @@ class RegisterWindow(QWidget):
             register_window.addRow(pass_box)
             register_window.addRow(submit_box)
             register_window.setAlignment(Qt.AlignCenter)
+
+            register_to_db(self.user_line.text(),self.name_line.text(),self.pass_line.text(),self.phone_line.text())
 
             return register_window
 
