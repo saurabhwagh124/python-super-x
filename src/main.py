@@ -2,6 +2,7 @@ import sys ,os
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
+from Home import check_login_details, upload_order_details
 from confirmed import confirmedDetails
 from register_page import *
 from supplier_login import *
@@ -83,10 +84,15 @@ class MainWindow(QMainWindow):
     
     def set_tanker_drinking_ui(self):
         print("Tanker and drinking")
-        self.tank_drink_widget = QWidget()
-        self.setCentralWidget(self.tank_drink_widget)
-        self.tank_drink_widget.setLayout(self.obj_tanker_drinking.get_tanker_drinking_ui())
-        self.background()
+        if (check_login_details(self.username_line.text(), self.password_line.text())): 
+            self.tank_drink_widget = QWidget()
+            print("Login sucessfull")
+            self.setCentralWidget(self.tank_drink_widget)
+            self.tank_drink_widget.setLayout(self.obj_tanker_drinking.get_tanker_drinking_ui())
+            self.background()
+        else:
+            print("Login unsucessful")
+            return
 
     def set_widget_to_layout(self):
         self.main_central_widget = QWidget()
@@ -99,9 +105,10 @@ class MainWindow(QMainWindow):
         self.order_widget.setLayout(self.obj_confirmation_order.get_confirm_order_ui())
 
     def get_final_ticket_ui(self):
+        upload_order_details(self.obj_confirmation_order.con_quantity_line.text(),self.obj_confirmation_order.con_name_line.text(),self.obj_confirmation_order.con_phone_line.text(),self.obj_confirmation_order.con_address_line.text(),self.obj_confirmation_order.con_calender.text(),self.obj_confirmation_order.con_clock.text())
         self.final_ticket = QWidget()
         self.setCentralWidget(self.final_ticket)
-        self.final_ticket.setLayout(self.obj_confirmed_ticket.display_ticket())
+        self.final_ticket.setLayout(self.obj_confirmed_ticket.display_ticket(self.obj_confirmation_order.con_name_line.text()))
 
     def get_login_ui(self):
 
@@ -115,23 +122,23 @@ class MainWindow(QMainWindow):
         password_label.setFont(QFont("Arial",12))
 
         # creating LineEdits
-        username_line = QLineEdit()
-        username_line.setPlaceholderText("Enter your username")
-        username_line.setGeometry(0,0,200,60)
-        username_line.setFont(QFont("Arial",12))
-        username_line.setStyleSheet("border :1px solid cyan;"
+        self.username_line = QLineEdit()
+        self.username_line.setPlaceholderText("Enter your username")
+        self.username_line.setGeometry(0,0,200,60)
+        self.username_line.setFont(QFont("Arial",12))
+        self.username_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-        password_line = QLineEdit()
-        password_line.setPlaceholderText("Enter your password")
+        self.password_line = QLineEdit()
+        self.password_line.setPlaceholderText("Enter your password")
 
-        password_line.setEchoMode(QLineEdit.Password)
+        self.password_line.setEchoMode(QLineEdit.Password)
        
-        password_line.setGeometry(0,0,200,60)
-        password_line.setFont(QFont("Arial",12))
-        password_line.setStyleSheet("border :2px solid cyan;"
+        self.password_line.setGeometry(0,0,200,60)
+        self.password_line.setFont(QFont("Arial",12))
+        self.password_line.setStyleSheet("border :2px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
@@ -186,10 +193,10 @@ class MainWindow(QMainWindow):
 
         # adding elements in the hboxes
         username_box.addWidget(username_label)
-        username_box.addWidget(username_line)
+        username_box.addWidget(self.username_line)
 
         password_box.addWidget(password_label)
-        password_box.addWidget(password_line)
+        password_box.addWidget(self.password_line)
 
         button_box.addWidget(login_button)
         button_box.addWidget(signup_button)

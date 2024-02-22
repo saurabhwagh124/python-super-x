@@ -7,6 +7,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtWidgets import QWidget
 
+from Home import get_suppliers_orders
+
 
 class SupplierOrders(QWidget):
 
@@ -31,6 +33,7 @@ class SupplierOrders(QWidget):
         self.quantity = "50"
         self.date = "01/12/2004"
         self.time = "2:30 pm"
+        self.index = 0
 
 
     def get_supplier_orders_ui(self):
@@ -48,6 +51,14 @@ class SupplierOrders(QWidget):
         self.const_date.setFont(QFont('Arial',12 ))
         self.const_time = QLabel("Time: ")
         self.const_time.setFont(QFont('Arial',12 ))
+
+        order_bundles = get_suppliers_orders()
+        self.quantity = order_bundles[self.index]['quantity']
+        self.name = order_bundles[self.index]['name']
+        self.no = order_bundles[self.index]['phone']
+        self.address = order_bundles[self.index]['address']
+        self.date = order_bundles[self.index]['date']
+        self.time = order_bundles[self.index]['times']
 
 
         self.get_name = QLabel(self.name)

@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtWidgets import QWidget
 
+from Home import get_order_details
+
 class confirmedDetails(QWidget):
     def __init__(self):
         super().__init__()
@@ -22,10 +24,19 @@ class confirmedDetails(QWidget):
         
         
 
-    def display_ticket(self):
+    def display_ticket(self,x):
         self.confirmed_window=QFormLayout()
+        self.name = x
 
-         # creating labels
+        value_return = get_order_details(self.name)
+        self.str_quantity = value_return['quantity']
+        self.str_name = value_return['name']
+        self.str_phone = value_return['phone']
+        self.str_address = value_return['address']
+        self.str_date = value_return['date']
+        self.str_time = value_return['time']
+
+        # creating labels
         self.conf_quantity_label = QLabel("Quantity of water needed: ")
         self.conf_name_label =  QLabel("                      Name: ")
         self.conf_phone_label = QLabel("                  Phone no.: ")
