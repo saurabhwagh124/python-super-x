@@ -57,7 +57,9 @@ class MainWindow(QMainWindow):
     def get_login_again(self):
         self.login_after_register = QWidget()
         self.setCentralWidget(self.login_after_register)
-        self.login_after_register.setLayout(self.get_login_ui())   
+        register_to_db(self.obj_register.user_line.text(),self.obj_register.name_line.text(),self.obj_register.pass_line.text(),self.obj_register.phone_line.text())
+        self.login_after_register.setLayout(self.get_login_ui())
+
 
     def set_register_ui(self):
         print("Clicked!!!!!")

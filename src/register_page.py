@@ -142,8 +142,6 @@ class RegisterWindow(QWidget):
             register_window.addRow(submit_box)
             register_window.setAlignment(Qt.AlignCenter)
 
-            register_to_db(self.user_line.text(),self.name_line.text(),self.pass_line.text(),self.phone_line.text())
-
             return register_window
 
 
