@@ -145,11 +145,6 @@ class MainWindow(QMainWindow):
         admin_button.setFixedSize(100,40)
         admin_button.setFont(QFont("Arial",12))
 
-
-        
-
-
-
         #button theme
 
         login_button.setStyleSheet("QPushButton::hover"

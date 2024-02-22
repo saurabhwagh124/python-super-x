@@ -4,6 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtWidgets import QWidget
+from Home import *
 
 class RegisterWindow(QWidget):
      def __init__(self):
@@ -32,41 +33,44 @@ class RegisterWindow(QWidget):
                
             # creating LineEdits
 
-            name_line = QLineEdit()
-            # name_line.placeholderText("enter")
-            name_line.setGeometry(0,0,200,60)
-            phone_line = QLineEdit()
-            phone_line.setGeometry(0,0,200,60)
-            user_line = QLineEdit()
-            user_line.setGeometry(0,0,200,60)
-            pass_line = QLineEdit()
-            pass_line.setEchoMode(QLineEdit.Password)
+            self.name_line = QLineEdit()
+            name_string = self.name_line.text()
+            self.name_line.setGeometry(0,0,200,60)
+            self.phone_line = QLineEdit()
+            phone_string = self.phone_line.text()
+            self.phone_line.setGeometry(0,0,200,60)
+            self.user_line = QLineEdit()
+            user_string = self.user_line.text()
+            self.user_line.setGeometry(0,0,200,60)
+            self.pass_line = QLineEdit()
+            pass_string = self.pass_line.text()
+            self.pass_line.setEchoMode(QLineEdit.Password)
 
-            pass_line.setGeometry(0,0,200,60)
+            self.pass_line.setGeometry(0,0,200,60)
 
             # setting size of text box
 
-            name_line.setFixedSize(400,40)
-            phone_line.setFixedSize(400,40)
-            user_line.setFixedSize(400,40)
-            pass_line.setFixedSize(400,40)
+            self.name_line.setFixedSize(400,40)
+            self.phone_line.setFixedSize(400,40)
+            self.user_line.setFixedSize(400,40)
+            self.pass_line.setFixedSize(400,40)
 ##################################################################
-            name_line.setStyleSheet("border :1px solid cyan;"
+            self.name_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-            phone_line.setStyleSheet("border :1px solid cyan;"
+            self.phone_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-            user_line.setStyleSheet("border :1px solid cyan;"
+            self.user_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-            pass_line.setStyleSheet("border :1px solid cyan;"
+            self.pass_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
@@ -77,10 +81,10 @@ class RegisterWindow(QWidget):
 
             #setting fontsize of text inside text box
 
-            name_line.setFont(QFont('Arial', 12))
-            phone_line.setFont(QFont('Arial', 12))
-            user_line.setFont(QFont('Arial', 12))
-            pass_line.setFont(QFont('Arial', 12))
+            self.name_line.setFont(QFont('Arial', 12))
+            self.phone_line.setFont(QFont('Arial', 12))
+            self.user_line.setFont(QFont('Arial', 12))
+            self.pass_line.setFont(QFont('Arial', 12))
 
 
             #creating submit button ...................
@@ -118,16 +122,16 @@ class RegisterWindow(QWidget):
             #adding element in the hbox
 
             name_box.addWidget(name_label)
-            name_box.addWidget(name_line)
+            name_box.addWidget(self.name_line)
 
             phone_box.addWidget(phone_label)
-            phone_box.addWidget(phone_line)
+            phone_box.addWidget(self.phone_line)
 
             user_box.addWidget(user_label)
-            user_box.addWidget(user_line)
+            user_box.addWidget(self.user_line)
 
             pass_box.addWidget(pass_label)
-            pass_box.addWidget(pass_line)
+            pass_box.addWidget(self.pass_line)
 
             submit_box.addWidget(self.submit_button)
             submit_box.setAlignment(Qt.AlignCenter)
@@ -140,7 +144,7 @@ class RegisterWindow(QWidget):
             register_window.addRow(pass_box)
             register_window.addRow(submit_box)
             register_window.setAlignment(Qt.AlignCenter)
-            
+
             return register_window
 
 
