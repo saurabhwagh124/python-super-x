@@ -13,7 +13,7 @@ class ConfirmOrderWindow(QWidget):
         self.setGeometry(350,150,1200,800)
         self.submit_button = QPushButton("Submit")
 
-    def get_confirm_order_ui(self):
+    def get_confirm_order_ui(self,supplier_name):
 
         confirmation_window = QFormLayout()
         #creating labels 
@@ -23,6 +23,8 @@ class ConfirmOrderWindow(QWidget):
         con_address = QLabel("Address: ")
         con_date  = QLabel("Select Date: ")
         con_time = QLabel("Select Time: ")
+        con_supplier_const = QLabel("Supplier_Name: ")
+        con_supplier = QLabel(supplier_name)
 
         # settind font size and style
         con_quantity.setFont(QFont('Arial',12 )) 
@@ -31,6 +33,8 @@ class ConfirmOrderWindow(QWidget):
         con_address.setFont(QFont('Arial',12 )) 
         con_date.setFont(QFont('Arial',12 )) 
         con_time.setFont(QFont('Arial',12 )) 
+        con_supplier.setFont(QFont('Arial',12))
+        con_supplier_const.setFont(QFont('Arial',12))
 
          #creating buttons  
         
@@ -126,6 +130,9 @@ class ConfirmOrderWindow(QWidget):
         time_box = QHBoxLayout()
         time_box.setAlignment(Qt.AlignCenter)
         time_box.setContentsMargins(250,0,250,0)
+        supplier_box = QHBoxLayout()
+        supplier_box.setAlignment(Qt.AlignCenter)
+        supplier_box.setContentsMargins(250,0,250,0)
 
         # calendar widget
         self.con_calender = QDateEdit()
@@ -169,6 +176,7 @@ class ConfirmOrderWindow(QWidget):
         confirmation_window.addRow(date_box)
         confirmation_window.addRow(time_box)
         confirmation_window.addRow(submit_box)
+        confirmation_window.addRow(supplier_box)
         
         
         return confirmation_window

@@ -13,8 +13,6 @@ class TankerDrinkingWindow(QWidget):
     def get_tanker_drinking_ui(self):
         tanker_drinking_layout = QVBoxLayout()
 
-        
-
         self.tanker_button.setStyleSheet("QPushButton::hover"
                      "{"
                      "background-color : lightgreen;border-radius: 10px ;border-style: outset;"

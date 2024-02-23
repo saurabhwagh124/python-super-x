@@ -58,7 +58,7 @@ class LocationWindow(QWidget):
 
         #creating labels
         location_label = QLabel("Location : ")
-        water_provider1 = QLabel("1.Saurabh water supplyers")
+        water_provider1 = QLabel("1.Saurabh water suppliers")
         water_provider2 = QLabel("2.Nachiket Water provider")
         water_provider3 = QLabel("3.Aditya Waters")
 

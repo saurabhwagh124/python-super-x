@@ -10,12 +10,11 @@ from PyQt5.QtCore import Qt,QSize
 from PyQt5.QtWidgets import QWidget
 
 
-class Thanking(QWidget):
+class AboutUs(QWidget):
      def __init__(self):
         super().__init__()
         self.setWindowTitle("About Us")
         self.setGeometry(350,150,1200,800)
-        self.thankyou_ui()
 
      def thankyou_ui(self):
         thankyou_window=QFormLayout()
@@ -26,39 +25,30 @@ class Thanking(QWidget):
         line4 = QLabel("taught by sir has helped us to learn Pyqt from very beginning")
         line5 =QLabel("in short period of time ")
         line6 =QLabel("Thank you...  Rahul Dada for your valuable guidence")
-
-
-       
-
-        line7=QLabel("Groupleader :- Surabh Wagh")
+        line7=QLabel("Groupleader :- Saurabh Wagh")
         line8=QLabel("Members:-")
         line9=QLabel("Adinath Khose")
         line10=QLabel("Nachiket Bokade")
         line11=QLabel("Aditya Andhale")
-        back_button = QPushButton("Back")
 
-
-        Title.setFont(QFont('Arial',20 ))
-        line1.setFont(QFont('Arial',13 ))
-        line2.setFont(QFont('Arial',13 )) 
-        line3.setFont(QFont('Arial',13 )) 
-        line4.setFont(QFont('Arial',13 ))
-        line5.setFont(QFont('Arial',13 ))
-        line6.setFont(QFont('Arial',13 ))
-        line7.setFont(QFont('Arial',13 ))
-        line8.setFont(QFont('Arial',13 )) 
+        Title.setFont(QFont('Arial',15 ))
+        line1.setFont(QFont('Arial',12 ))
+        line2.setFont(QFont('Arial',12 )) 
+        line3.setFont(QFont('Arial',12 )) 
+        line4.setFont(QFont('Arial',12 ))
+        line5.setFont(QFont('Arial',12 ))
+        line6.setFont(QFont('Arial',12 ))
+        line7.setFont(QFont('Arial',12))
+        line8.setFont(QFont('Arial',12 )) 
         line9.setFont(QFont('Arial',12 )) 
         line10.setFont(QFont('Arial',12 ))
         line11.setFont(QFont('Arial',12 ))
-        back_button.setFont(QFont("Arial",12))
-
 
 
 
         Title_box = QHBoxLayout()
         Title_box.setAlignment(Qt.AlignCenter)
-        Title_box.setContentsMargins(250,200,250,50)
-        Title.setStyleSheet("font-weight: bold")
+        Title_box.setContentsMargins(250,300,250,50)
 
         line1_box = QHBoxLayout()
         line1_box.setAlignment(Qt.AlignCenter)
@@ -83,43 +73,27 @@ class Thanking(QWidget):
 
         line6_box = QHBoxLayout()
         line6_box.setAlignment(Qt.AlignCenter)
-        line6_box.setContentsMargins(100,27,100,0)
+        line6_box.setContentsMargins(100,27,250,0)
 
         line7_box = QHBoxLayout()
         line7_box.setAlignment(Qt.AlignCenter)
-        line7_box.setContentsMargins(100,10,100,0)
+        line7_box.setContentsMargins(25,10,250,0)
 
         line8_box = QHBoxLayout()
         line8_box.setAlignment(Qt.AlignCenter)
-        line8_box.setContentsMargins(100,10,100,0)
+        line8_box.setContentsMargins(10,10,320,0)
 
         line9_box = QHBoxLayout()
         line9_box.setAlignment(Qt.AlignCenter)
-        line9_box.setContentsMargins(100,5,100,0)
+        line9_box.setContentsMargins(5,5,310,0)
 
         line10_box = QHBoxLayout()
         line10_box.setAlignment(Qt.AlignCenter)
-        line10_box.setContentsMargins(100,5,100,0)
+        line10_box.setContentsMargins(5,5,310,0)
 
         line11_box = QHBoxLayout()
         line11_box.setAlignment(Qt.AlignCenter)
-        line11_box.setContentsMargins(100,5,100,0)
-
-        button_box = QVBoxLayout()
-        button_box.setAlignment(Qt.AlignCenter)
-        button_box.setContentsMargins(100,5,100,0)
-
-        back_button.setFixedSize(80,40)
-
-        back_button.setStyleSheet("QPushButton::hover"
-                     "{"
-                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
-                     "}"
-                     "QPushButton"
-                             "{"
-                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
-                             "}")
-        back_button.setFont(QFont('Arial', 10))
+        line11_box.setContentsMargins(5,5,310,0)
 
         self.label = QLabel(self)
         
@@ -154,18 +128,7 @@ class Thanking(QWidget):
         line9_box.addWidget(line9)
         line10_box.addWidget(line10)
         line11_box.addWidget(line11)
-        button_box.addWidget(back_button)
 
-        background_color = QColor(135, 206, 250)  # Light Sky Blue
-        palette = QPalette()
-        palette.setColor(QPalette.Window, background_color)
-        self.setPalette(palette)
-
-        white_palette = QPalette()
-        white_palette.setColor(QPalette.WindowText, QColor(255,255,255))
-
-        for label in [ Title,line1,line2, line3, line4, line5, line6, line7, line8, line9, line10, line11]:
-            label.setPalette(white_palette)
 
 
 
@@ -181,15 +144,8 @@ class Thanking(QWidget):
         thankyou_window.addRow(line9_box)
         thankyou_window.addRow(line10_box)
         thankyou_window.addRow(line11_box)
-        thankyou_window.addRow(back_button)
 
-
-        self.setLayout( thankyou_window)
-
-app4 = QApplication(sys.argv)
-ex = Thanking()
-ex.show()
-sys.exit(app4.exec_())
+        return thankyou_window
 
 
 

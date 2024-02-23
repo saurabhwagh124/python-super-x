@@ -20,6 +20,7 @@ class confirmedDetails(QWidget):
         self.str_address=" sample address"
         self.str_date=" sample date"
         self.str_time= " sample time"
+        self.str_supplier = "sample supplier"
     
         
         
@@ -35,14 +36,16 @@ class confirmedDetails(QWidget):
         self.str_address = value_return['address']
         self.str_date = value_return['date']
         self.str_time = value_return['time']
+        #self.str_supplier = value_return['supplier']
 
         # creating labels
         self.conf_quantity_label = QLabel("Quantity of water needed: ")
-        self.conf_name_label =  QLabel("                      Name: ")
+        self.conf_name_label =  QLabel("                       Name: ")
         self.conf_phone_label = QLabel("                  Phone no.: ")
-        self.conf_address_label = QLabel("                      Address: ")
-        self.conf_date_label  = QLabel("              Select Date: ")
-        self.conf_time_label = QLabel("              Select Time: ")        
+        self.conf_address_label = QLabel("                  Address: ")
+        self.conf_date_label  = QLabel("                       Date: ")
+        self.conf_time_label = QLabel("                        Time: ") 
+        self.conf_supplier_label = QLabel("                 Supplier:")
 
         # creating LineEdits
         self.conf_quantity_line = QLabel(self.str_quantity)
@@ -57,6 +60,8 @@ class confirmedDetails(QWidget):
         self.conf_date_line.setContentsMargins(100,0,500,0)
         self.conf_time_line = QLabel(self.str_time)
         self.conf_time_line.setContentsMargins(100,0,500,0)
+        self.conf_supplier_line =QLabel(self.str_supplier)
+        self.conf_supplier_line.setContentsMargins(100,0,500,0)
        
 
         
@@ -68,6 +73,7 @@ class confirmedDetails(QWidget):
         self.conf_address_label.setFont(QFont('Arial',12 ))
         self.conf_date_label.setFont(QFont('Arial',12 ))
         self.conf_time_label.setFont(QFont('Arial',12 ))
+        self.conf_supplier_label.setFont(QFont('Arial',12))
 
 
         self.conf_quantity_line = QLabel(self.str_quantity)
@@ -76,6 +82,7 @@ class confirmedDetails(QWidget):
         self.conf_address_line = QLabel(self.str_address)
         self.conf_date_line = QLabel(self.str_date)
         self.conf_time_line = QLabel(self.str_time)
+        self.conf_supplier_line = QLabel(self.str_supplier)
 
 
         self.confirmed_window.addWidget(self.conf_quantity_line)
@@ -117,6 +124,9 @@ class confirmedDetails(QWidget):
 
         self.conf_time_box=QHBoxLayout()
         self.conf_time_box.setAlignment(Qt.AlignCenter)
+
+        self.conf_supplier_box = QHBoxLayout()
+        self.conf_supplier_box.setAlignment(Qt.AlignCenter)
         
         
         #adding element in the hbox

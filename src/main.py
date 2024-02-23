@@ -11,6 +11,7 @@ from tanker_drinking_water import *
 from location import *
 from confirm_order import *
 from supplier_order import *
+from about_us import *
 
 
 class MainWindow(QMainWindow):
@@ -22,6 +23,7 @@ class MainWindow(QMainWindow):
         # geometry(align left, align top, width, height)        
 
         self.obj_register = RegisterWindow()
+        self.obj_about = AboutUs()
         self.obj_supplier = SupplierWindow()
         self.obj_tanker_drinking = TankerDrinkingWindow()
         self.obj_location = LocationWindow()
@@ -68,8 +70,12 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.reg_wid)
         self.reg_wid.setLayout(self.obj_register.get_register_ui())
         self.background()
-
     
+    def set_about_us_ui(self):
+        self.about_widget = QWidget()
+        self.setCentralWidget(self.about_widget)
+        self.about_widget.setLayout(self.obj_about.thankyou_ui())
+
     def set_supplier_ui(self):
         print("Supplier")
         self.supplier_wid = QWidget()
@@ -116,10 +122,19 @@ class MainWindow(QMainWindow):
 
         # creating labels
         username_label = QLabel("Username: ")
-        username_label.setFont(QFont("Arial",12))
+        username_label.setFont(QFont("Arial",13,20))
         
         password_label = QLabel("Password: ")
-        password_label.setFont(QFont("Arial",12))
+        password_label.setFont(QFont("Arial",13,20))
+
+        blank_label1 = QLabel("")
+        blank_label1.setFixedHeight(20)
+
+        blank_label2 = QLabel("")
+        blank_label2.setFixedHeight(20)
+
+        blank_label3 = QLabel("")
+        blank_label3.setFixedHeight(20)
 
         # creating LineEdits
         self.username_line = QLineEdit()
@@ -146,6 +161,10 @@ class MainWindow(QMainWindow):
 
 
         #creating buttons
+        about_us_button = QPushButton("About us")
+        about_us_button.setFixedSize(100,40)
+        about_us_button.setFont(QFont("Arial",12))
+        about_us_button.setContentsMargins(550,0,550,0)
         login_button = QPushButton("Login")
         login_button.setFixedSize(100,40)
         login_button.setFont(QFont("Arial",12))
@@ -182,6 +201,14 @@ class MainWindow(QMainWindow):
                              "{"
                              "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
+        about_us_button.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
+                             "}")
 
         #creating boxes
         username_box = QHBoxLayout()
@@ -190,6 +217,7 @@ class MainWindow(QMainWindow):
         password_box.setContentsMargins(400,0,400,0)
         button_box = QHBoxLayout()
         admin_box = QVBoxLayout()
+        about_us_box = QHBoxLayout()
 
         # adding elements in the hboxes
         username_box.addWidget(username_label)
@@ -205,17 +233,24 @@ class MainWindow(QMainWindow):
         admin_box.addWidget(admin_button)
         admin_box.setAlignment(Qt.AlignCenter)
 
+        about_us_box.addWidget(about_us_button)
+        about_us_box.setAlignment(Qt.AlignCenter)
 
         #adding elements to form layout
         login_window.addRow(username_box)
         login_window.addRow(password_box)
+        login_window.addRow(blank_label1)
         login_window.addRow(button_box)
+        login_window.addRow(blank_label2)
         login_window.addRow(admin_box)
+        login_window.addRow(blank_label3)
+        login_window.addRow(about_us_box)
         login_window.setAlignment(Qt.AlignCenter)
 
         # on clicked
         signup_button.clicked.connect(lambda: self.set_register_ui())
         admin_button.clicked.connect(lambda: self.set_supplier_ui())
+        about_us_button.clicked.connect(lambda: self.set_about_us_ui())
         login_button.clicked.connect(lambda: self.set_tanker_drinking_ui())
         self.obj_register.submit_button.clicked.connect(lambda: self.get_login_again())
         
@@ -224,7 +259,7 @@ class MainWindow(QMainWindow):
         self.obj_tanker_drinking.drinking_button.clicked.connect(lambda: self.set_widget_to_layout())
 
         #location and order buttons
-        self.obj_location.aditya_water_button.clicked.connect(lambda: self.set_order_layout_ui())
+        self.obj_location.aditya_water_button.clicked.connect(lambda: self.set_order_layout_ui("Aditya water"))
         self.obj_location.nachiket_water_button.clicked.connect(lambda: self.set_order_layout_ui())
         self.obj_location.saurab_water_button.clicked.connect(lambda: self.set_order_layout_ui())       
 
