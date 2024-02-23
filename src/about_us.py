@@ -73,27 +73,27 @@ class AboutUs(QWidget):
 
         line6_box = QHBoxLayout()
         line6_box.setAlignment(Qt.AlignCenter)
-        line6_box.setContentsMargins(100,27,250,0)
+        line6_box.setContentsMargins(100,27,100,0)
 
         line7_box = QHBoxLayout()
         line7_box.setAlignment(Qt.AlignCenter)
-        line7_box.setContentsMargins(25,10,250,0)
+        line7_box.setContentsMargins(100,10,100,0)
 
         line8_box = QHBoxLayout()
         line8_box.setAlignment(Qt.AlignCenter)
-        line8_box.setContentsMargins(10,10,320,0)
+        line8_box.setContentsMargins(100,10,100,0)
 
         line9_box = QHBoxLayout()
         line9_box.setAlignment(Qt.AlignCenter)
-        line9_box.setContentsMargins(5,5,310,0)
+        line9_box.setContentsMargins(100,5,100,0)
 
         line10_box = QHBoxLayout()
         line10_box.setAlignment(Qt.AlignCenter)
-        line10_box.setContentsMargins(5,5,310,0)
+        line10_box.setContentsMargins(100,5,100,0)
 
         line11_box = QHBoxLayout()
         line11_box.setAlignment(Qt.AlignCenter)
-        line11_box.setContentsMargins(5,5,310,0)
+        line11_box.setContentsMargins(100,5,100,0)
 
         self.label = QLabel(self)
         
