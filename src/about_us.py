@@ -80,27 +80,23 @@ class AboutUS(QWidget):
 
         line7_box = QHBoxLayout()
         line7_box.setAlignment(Qt.AlignCenter)
-        line7_box.setContentsMargins(100,10,100,0)
+        line7_box.setContentsMargins(25,10,250,0)
 
         line8_box = QHBoxLayout()
         line8_box.setAlignment(Qt.AlignCenter)
-        line8_box.setContentsMargins(100,10,100,0)
+        line8_box.setContentsMargins(10,10,320,0)
 
-        button_box = QVBoxLayout()
-        button_box.setAlignment(Qt.AlignCenter)
-        button_box.setContentsMargins(100,5,100,0)
+        line9_box = QHBoxLayout()
+        line9_box.setAlignment(Qt.AlignCenter)
+        line9_box.setContentsMargins(5,5,310,0)
 
-        self.back_button.setFixedSize(80,40)
+        line10_box = QHBoxLayout()
+        line10_box.setAlignment(Qt.AlignCenter)
+        line10_box.setContentsMargins(5,5,310,0)
 
-        self.back_button.setStyleSheet("QPushButton::hover"
-                     "{"
-                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
-                     "}"
-                     "QPushButton"
-                             "{"
-                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
-                             "}")
-        self.back_button.setFont(QFont('Arial', 10))
+        line11_box = QHBoxLayout()
+        line11_box.setAlignment(Qt.AlignCenter)
+        line11_box.setContentsMargins(5,5,310,0)
 
         self.label = QLabel(self)
         self.pixmap = QPixmap('sir.png')
@@ -121,7 +117,6 @@ class AboutUS(QWidget):
         line7_box.addWidget(line7)
         line8_box.addWidget(line8)
         
-        button_box.addWidget(self.back_button)
 
         background_color = QColor(135, 206, 250)  # Light Sky Blue
         palette = QPalette()
