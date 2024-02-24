@@ -11,7 +11,7 @@ from tanker_drinking_water import *
 from location import *
 from confirm_order import *
 from supplier_order import *
-from about_us import *
+from Aboutus import *
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()        
@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         # geometry(align left, align top, width, height)        
 
         self.obj_register = RegisterWindow()
-        self.obj_about = AboutUS()
+        self.obj_about = AboutUs()
         self.obj_supplier = SupplierWindow()
         self.obj_tanker_drinking = TankerDrinkingWindow()
         self.obj_location = LocationWindow()
@@ -61,6 +61,10 @@ class MainWindow(QMainWindow):
         register_to_db(self.obj_register.user_line.text(),self.obj_register.name_line.text(),self.obj_register.pass_line.text(),self.obj_register.phone_line.text())
         self.login_after_register.setLayout(self.get_login_ui())
 
+    def set_login_after_about(self):
+        self.back_about_widget = QWidget()
+        self.setCentralWidget(self.back_about_widget)
+        self.back_about_widget.setLayout(self.get_login_ui())
 
     def set_register_ui(self):
         print("Clicked!!!!!")
@@ -73,6 +77,7 @@ class MainWindow(QMainWindow):
         self.about_widget = QWidget()
         self.setCentralWidget(self.about_widget)
         self.about_widget.setLayout(self.obj_about.thankyou_ui())
+        self.obj_about.back.clicked.connect(lambda: self.set_login_after_about())
 
     def set_supplier_ui(self):
         print("Supplier")
@@ -281,8 +286,6 @@ class MainWindow(QMainWindow):
 
         #supplier register submit on click
         self.obj_sup_register.submit_button.clicked.connect(lambda: self.set_supplier_ui_again())
-
-        self.obj_about.back_button.clicked.connect(lambda: self.get_login_ui())
 
         return login_window
      

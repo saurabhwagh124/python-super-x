@@ -1,21 +1,15 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt,QSize
+from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QWidget
-import sys
-from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import Qt,QSize
-from PyQt5.QtWidgets import QWidget
 
 
-class AboutUS(QWidget):
+class AboutUs(QWidget):
      def _init_(self):
         super()._init_()
         self.setWindowTitle("About Us")
         self.setGeometry(350,150,1200,800)
-        self.back_button = QPushButton("Back")
 
      def thankyou_ui(self):
         thankyou_window=QFormLayout()
@@ -26,9 +20,6 @@ class AboutUS(QWidget):
 
         line7=QLabel("Groupleader :- Saurabh Wagh")
         line8=QLabel("Members:- Adinath Khose, Nachiket Bokade, Aditya Andhale ")
-        
-       
-
 
         Title.setFont(QFont('Arial',20 ))
         line1.setFont(QFont('Arial',13 ))
@@ -37,8 +28,17 @@ class AboutUS(QWidget):
         
         line7.setFont(QFont('Arial',13 ))
         line8.setFont(QFont('Arial',13 ))
-       
-        self.back_button.setFont(QFont("Arial",12))
+        self.back = QPushButton("Back")
+        self.back.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color :  lightyellow;border-radius: 10px ;border-style: outset;"
+                             "}")
+        self.back.setFont(QFont("Arial",12))
+        self.back.setFixedSize(100,40)
 
 
         img_box = QHBoxLayout()
@@ -99,8 +99,8 @@ class AboutUS(QWidget):
         line11_box.setContentsMargins(5,5,310,0)
 
         self.label = QLabel(self)
-        self.pixmap = QPixmap('sir.png')
-        self.pixmap.scaled(100,100)
+        self.pixmap = QPixmap('src/sir.jpg')
+        self.pixmap.scaled(100,100,)
         
         self.label.setPixmap(self.pixmap)
         #self.label.resize(500,500)
@@ -139,7 +139,7 @@ class AboutUS(QWidget):
         thankyou_window.addRow(line7_box)
         thankyou_window.addRow(line8_box)
         
-        thankyou_window.addRow(self.back_button)
+        thankyou_window.addRow(self.back)
 
 
         return thankyou_window
