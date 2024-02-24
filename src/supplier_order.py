@@ -1,5 +1,3 @@
-
-
 import sys
 from PyQt5.QtWidgets import * 
 from PyQt5.QtGui import *
@@ -53,12 +51,12 @@ class SupplierOrders(QWidget):
         self.const_time.setFont(QFont('Arial',12 ))
 
         order_bundles = get_suppliers_orders()
-        self.quantity = order_bundles[self.index]['quantity']
-        self.name = order_bundles[self.index]['name']
-        self.no = order_bundles[self.index]['phone']
-        self.address = order_bundles[self.index]['address']
-        self.date = order_bundles[self.index]['date']
-        self.time = order_bundles[self.index]['times']
+        # self.quantity = order_bundles[self.index]['quantity']
+        # self.name = order_bundles[self.index]['name']
+        # self.no = order_bundles[self.index]['phone']
+        # self.address = order_bundles[self.index]['address']
+        # self.date = order_bundles[self.index]['date']
+        # self.time = order_bundles[self.index]['times']
 
 
         self.get_name = QLabel(self.name)

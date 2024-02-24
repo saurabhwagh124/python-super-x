@@ -23,52 +23,52 @@ class SupplierRegister(QWidget):
         user_label.setFont(QFont('Arial',12 )) 
         password_label.setFont(QFont('Arial',12 )) 
 
-        name_line = QLineEdit()
-        name_line.setPlaceholderText("Enter your name")
-        name_line.setGeometry(0,0,200,60)
-        phone_line = QLineEdit()
-        phone_line.setPlaceholderText("Enter your phone no.")
-        phone_line.setGeometry(0,0,200,60)
-        user_line = QLineEdit()
-        user_line.setPlaceholderText("Enter your username")
-        user_line.setGeometry(0,0,200,60)
-        pass_line = QLineEdit()
-        pass_line.setPlaceholderText("Enter your password")        
-        pass_line.setEchoMode(QLineEdit.Password)
+        self.name_line = QLineEdit()
+        self.name_line.setPlaceholderText("Enter your name")
+        self.name_line.setGeometry(0,0,200,60)
+        self.phone_line = QLineEdit()
+        self.phone_line.setPlaceholderText("Enter your phone no.")
+        self.phone_line.setGeometry(0,0,200,60)
+        self.user_line = QLineEdit()
+        self.user_line.setPlaceholderText("Enter your username")
+        self.user_line.setGeometry(0,0,200,60)
+        self.pass_line = QLineEdit()
+        self.pass_line.setPlaceholderText("Enter your password")        
+        self.pass_line.setEchoMode(QLineEdit.Password)
 
-        pass_line.setGeometry(0,0,200,60)
+        self.pass_line.setGeometry(0,0,200,60)
 
         # setting size of text box
 
-        name_line.setFixedSize(400,40)
-        phone_line.setFixedSize(400,40)
-        user_line.setFixedSize(400,40)
-        pass_line.setFixedSize(400,40)
+        self.name_line.setFixedSize(400,40)
+        self.phone_line.setFixedSize(400,40)
+        self.user_line.setFixedSize(400,40)
+        self.pass_line.setFixedSize(400,40)
 
         #setting fontsize of text inside text box
 
-        name_line.setFont(QFont('Arial', 12))
-        phone_line.setFont(QFont('Arial', 12))
-        user_line.setFont(QFont('Arial', 12))
-        pass_line.setFont(QFont('Arial', 12))
+        self.name_line.setFont(QFont('Arial', 12))
+        self.phone_line.setFont(QFont('Arial', 12))
+        self.user_line.setFont(QFont('Arial', 12))
+        self.pass_line.setFont(QFont('Arial', 12))
         
 
-        name_line.setStyleSheet("border :1px solid cyan;"
+        self.name_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-        phone_line.setStyleSheet("border :1px solid cyan;"
+        self.phone_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-        user_line.setStyleSheet("border :1px solid cyan;"
+        self.user_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-        pass_line.setStyleSheet("border :1px solid cyan;"
+        self.pass_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
@@ -108,16 +108,16 @@ class SupplierRegister(QWidget):
         #adding element in the hbox
 
         name_box.addWidget(name_label)
-        name_box.addWidget(name_line)
+        name_box.addWidget(self.name_line)
 
         phone_box.addWidget(phone_label)
-        phone_box.addWidget(phone_line)
+        phone_box.addWidget(self.phone_line)
 
         user_box.addWidget(user_label)
-        user_box.addWidget(user_line)
+        user_box.addWidget(self.user_line)
 
         pass_box.addWidget(password_label)
-        pass_box.addWidget(pass_line)
+        pass_box.addWidget(self.pass_line)
 
         submit_box.addWidget(self.submit_button)
         submit_box.setAlignment(Qt.AlignCenter)

@@ -2,7 +2,7 @@ import sys ,os
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from Home import check_login_details, upload_order_details
+from Home import check_login_details, upload_order_details, upload_supplier_details
 from confirmed import confirmedDetails
 from register_page import *
 from supplier_login import *
@@ -12,8 +12,6 @@ from location import *
 from confirm_order import *
 from supplier_order import *
 from about_us import *
-
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()        
@@ -23,7 +21,7 @@ class MainWindow(QMainWindow):
         # geometry(align left, align top, width, height)        
 
         self.obj_register = RegisterWindow()
-        self.obj_about = AboutUs()
+        self.obj_about = AboutUS()
         self.obj_supplier = SupplierWindow()
         self.obj_tanker_drinking = TankerDrinkingWindow()
         self.obj_location = LocationWindow()
@@ -82,6 +80,15 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.supplier_wid)
         self.supplier_wid.setLayout(self.obj_supplier.get_supplier_login_ui())
         self.background()
+    
+    def set_supplier_ui_again(self):
+        self.obj_supplier = SupplierWindow()
+        self.supplier_wid2 = QWidget()
+        upload_supplier_details(self.obj_sup_register.name_line.text(),self.obj_sup_register.user_line.text(),self.obj_sup_register.phone_line.text(),self.obj_sup_register.pass_line.text())
+        self.setCentralWidget(self.supplier_wid2)
+        self.supplier_wid2.setLayout(self.obj_supplier.get_supplier_login_ui())
+        self.obj_supplier.sup_login_button.clicked.connect(lambda: self.set_sup_orders_ui())
+        self.background()
 
     def set_supplier_register_ui(self):
         self.sup_register = QWidget()
@@ -105,13 +112,14 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.main_central_widget)
         self.main_central_widget.setLayout(self.obj_location.LocationWindow_Ui())
 
-    def set_order_layout_ui(self):
+    def set_order_layout_ui(self,supplier_name):
         self.order_widget = QWidget()
+        self.supplier_name = supplier_name
         self.setCentralWidget(self.order_widget)
-        self.order_widget.setLayout(self.obj_confirmation_order.get_confirm_order_ui())
+        self.order_widget.setLayout(self.obj_confirmation_order.get_confirm_order_ui(self.supplier_name))
 
     def get_final_ticket_ui(self):
-        upload_order_details(self.obj_confirmation_order.con_quantity_line.text(),self.obj_confirmation_order.con_name_line.text(),self.obj_confirmation_order.con_phone_line.text(),self.obj_confirmation_order.con_address_line.text(),self.obj_confirmation_order.con_calender.text(),self.obj_confirmation_order.con_clock.text())
+        upload_order_details(self.obj_confirmation_order.con_quantity_line.text(),self.obj_confirmation_order.con_name_line.text(),self.obj_confirmation_order.con_phone_line.text(),self.obj_confirmation_order.con_address_line.text(),self.obj_confirmation_order.con_calender.text(),self.obj_confirmation_order.con_clock.text(),self.obj_confirmation_order.con_supplier.text())
         self.final_ticket = QWidget()
         self.setCentralWidget(self.final_ticket)
         self.final_ticket.setLayout(self.obj_confirmed_ticket.display_ticket(self.obj_confirmation_order.con_name_line.text()))
@@ -260,18 +268,21 @@ class MainWindow(QMainWindow):
 
         #location and order buttons
         self.obj_location.aditya_water_button.clicked.connect(lambda: self.set_order_layout_ui("Aditya water"))
-        self.obj_location.nachiket_water_button.clicked.connect(lambda: self.set_order_layout_ui())
-        self.obj_location.saurab_water_button.clicked.connect(lambda: self.set_order_layout_ui())       
+        self.obj_location.nachiket_water_button.clicked.connect(lambda: self.set_order_layout_ui("Nachiket Water provider"))
+        self.obj_location.saurab_water_button.clicked.connect(lambda: self.set_order_layout_ui("Saurabh Water Suppliers"))       
 
         #submit onclick of confirmed details
         self.obj_confirmation_order.submit_button.clicked.connect(lambda: self.get_final_ticket_ui())
         
-        #supplier login on click
+        #supplier login on clicks
         self.obj_supplier.sup_login_button.clicked.connect(lambda: self.set_sup_orders_ui())
+        #self.obj_supplier_login.sup_login_button.clicked.connect(lambda: self.set_sup_orders_ui())
         self.obj_supplier.sup_signup_button.clicked.connect(lambda: self.set_supplier_register_ui())
 
         #supplier register submit on click
-        self.obj_sup_register.submit_button.clicked.connect(lambda: self.set_supplier_ui())
+        self.obj_sup_register.submit_button.clicked.connect(lambda: self.set_supplier_ui_again())
+
+        self.obj_about.back_button.clicked.connect(lambda: self.get_login_ui())
 
         return login_window
      

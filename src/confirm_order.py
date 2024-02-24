@@ -16,6 +16,7 @@ class ConfirmOrderWindow(QWidget):
     def get_confirm_order_ui(self,supplier_name):
 
         confirmation_window = QFormLayout()
+        self.supplier_name_order = supplier_name
         #creating labels 
         con_quantity = QLabel("Quantity of water needed: ")
         con_name =  QLabel("Name: ")
@@ -23,8 +24,8 @@ class ConfirmOrderWindow(QWidget):
         con_address = QLabel("Address: ")
         con_date  = QLabel("Select Date: ")
         con_time = QLabel("Select Time: ")
-        con_supplier_const = QLabel("Supplier_Name: ")
-        con_supplier = QLabel(supplier_name)
+        con_supplier_const = QLabel("Supplier_Name:              ")
+        self.con_supplier = QLabel(supplier_name)
 
         # settind font size and style
         con_quantity.setFont(QFont('Arial',12 )) 
@@ -33,7 +34,7 @@ class ConfirmOrderWindow(QWidget):
         con_address.setFont(QFont('Arial',12 )) 
         con_date.setFont(QFont('Arial',12 )) 
         con_time.setFont(QFont('Arial',12 )) 
-        con_supplier.setFont(QFont('Arial',12))
+        self.con_supplier.setFont(QFont('Arial',12))
         con_supplier_const.setFont(QFont('Arial',12))
 
          #creating buttons  
@@ -61,6 +62,8 @@ class ConfirmOrderWindow(QWidget):
 
         #creating line edits
         self.con_quantity_line  = QLineEdit()
+        self.con_quantity_line.setMaxLength(2)
+        self.con_quantity_line.setValidator(QIntValidator(1,99))
         self.con_quantity_line.setPlaceholderText("Enter the quantity of water")
         self.con_quantity_line.setFont(QFont('Arial',11))
 
@@ -69,6 +72,8 @@ class ConfirmOrderWindow(QWidget):
         self.con_name_line.setFont(QFont('Arial',11))
 
         self.con_phone_line = QLineEdit()
+        self.con_phone_line.setMaxLength(10)
+        self.con_phone_line.setValidator(QIntValidator())
         self.con_phone_line.setPlaceholderText("Enter your phone no.")
         self.con_phone_line.setMaxLength(10)
         self.con_phone_line.setFont(QFont('Arial',11))
@@ -168,6 +173,9 @@ class ConfirmOrderWindow(QWidget):
         time_box.addWidget(con_time)
         time_box.addWidget(self.con_clock)
 
+        supplier_box.addWidget(con_supplier_const)
+        supplier_box.addWidget(self.con_supplier)
+
         #adding elements to the layout
         confirmation_window.addRow(quantity_box)
         confirmation_window.addRow(name_box)
@@ -175,8 +183,9 @@ class ConfirmOrderWindow(QWidget):
         confirmation_window.addRow(address_box)
         confirmation_window.addRow(date_box)
         confirmation_window.addRow(time_box)
-        confirmation_window.addRow(submit_box)
         confirmation_window.addRow(supplier_box)
+        confirmation_window.addRow(submit_box)
+        
         
         
         return confirmation_window

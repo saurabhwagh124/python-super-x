@@ -7,17 +7,15 @@ class SupplierWindow(QWidget):
     def __init__(self):
         super().__init__()        
         self.setWindowTitle("Where's My Water?")
-        
-        self.setGeometry(350,150,1200,800)
-        # geometry(align left, align top, width, height)
         self.sup_login_button = QPushButton("Login")
         self.sup_signup_button = QPushButton("Signup")
-        #self.setLayout()
+        
+        self.setGeometry(350,150,1200,800)
+        
 
     def get_supplier_login_ui(self):
 
         supplier_login_window = QFormLayout()
-
         # creating labels
         supplier_u_name_label = QLabel("Username: ")
         supplier_u_name_label.setFont(QFont('Arial',12))
@@ -32,6 +30,7 @@ class SupplierWindow(QWidget):
         supplier_u_name_line.setGeometry(0,0,200,60)
         supplier_u_name_line.setFont(QFont('Arial',12))
         supplier_password_line = QLineEdit()
+        supplier_password_line.setEchoMode(QLineEdit.Password)
         supplier_password_line.setPlaceholderText("Enter your password")
 
         supplier_password_line.setGeometry(0,0,200,60)
@@ -106,9 +105,3 @@ class SupplierWindow(QWidget):
         return supplier_login_window
 
 
-
-
-#app = QApplication(sys.argv)
-#ex = SupplierWindow()
-#ex.show()
-#sys.exit(app.exec_())

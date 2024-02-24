@@ -37,6 +37,8 @@ class RegisterWindow(QWidget):
             # name_line.placeholderText("enter")
             self.name_line.setGeometry(0,0,200,60)
             self.phone_line = QLineEdit()
+            self.phone_line.setMaxLength(10)
+            self.phone_line.setValidator(QIntValidator())
             self.phone_line.setGeometry(0,0,200,60)
             self.user_line = QLineEdit()
             self.user_line.setGeometry(0,0,200,60)
@@ -51,7 +53,6 @@ class RegisterWindow(QWidget):
             self.phone_line.setFixedSize(400,40)
             self.user_line.setFixedSize(400,40)
             self.pass_line.setFixedSize(400,40)
-##################################################################
             self.name_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "

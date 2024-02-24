@@ -36,7 +36,7 @@ class confirmedDetails(QWidget):
         self.str_address = value_return['address']
         self.str_date = value_return['date']
         self.str_time = value_return['time']
-        #self.str_supplier = value_return['supplier']
+        self.str_supplier = value_return['supplier']
 
         # creating labels
         self.conf_quantity_label = QLabel("Quantity of water needed: ")
@@ -91,6 +91,7 @@ class confirmedDetails(QWidget):
         self.confirmed_window.addWidget(self.conf_address_line)
         self.confirmed_window.addWidget(self.conf_date_line)
         self.confirmed_window.addWidget(self.conf_time_line)
+        self.confirmed_window.addWidget(self.conf_supplier_line)
 
 
 
@@ -102,7 +103,7 @@ class confirmedDetails(QWidget):
         self.conf_address_line.setFont(QFont('Arial',12))
         self.conf_date_line.setFont(QFont('Arial',12))
         self.conf_time_line.setFont(QFont('Arial',12))
-       
+        self.conf_supplier_line.setFont(QFont('Arial',12))
 
 
         #creating boxes
@@ -148,6 +149,9 @@ class confirmedDetails(QWidget):
 
         self.conf_time_box.addWidget(self.conf_time_label)
         self.conf_time_box.addWidget(self.conf_time_line)
+
+        self.conf_supplier_box.addWidget(self.conf_supplier_label)
+        self.conf_supplier_box.addWidget(self.conf_supplier_line)
          #adding elements to form layout
 
         self.confirmed_window.addRow(self.conf_quantity_box)
@@ -156,6 +160,7 @@ class confirmedDetails(QWidget):
         self.confirmed_window.addRow(self.conf_address_box)
         self.confirmed_window.addRow(self.conf_date_box)
         self.confirmed_window.addRow(self.conf_time_box)
+        self.confirmed_window.addRow(self.conf_supplier_box)
         self.confirmed_window.setAlignment(Qt.AlignCenter)
 
         return self.confirmed_window 
