@@ -19,8 +19,10 @@ class SupplierWindow(QWidget):
         # creating labels
         supplier_u_name_label = QLabel("Username: ")
         supplier_u_name_label.setFont(QFont('Arial',12))
+        supplier_u_name_label.setStyleSheet("background-color : white")
         #username_label.se
         supplier_password_label = QLabel("Password: ")
+        supplier_password_label.setStyleSheet("background-color : white")
         supplier_password_label.setFont(QFont('Arial',12))
 
         # creating LineEdits

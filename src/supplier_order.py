@@ -24,7 +24,7 @@ class SupplierOrders(QWidget):
                              "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
         self.next_button.setFont(QFont('Arial', 15))
-        self.xlength = -1
+        self.xlength = 0
         self.water = 'water'
         self.name = "xxx"
         self.no = "xxx"
@@ -90,6 +90,21 @@ class SupplierOrders(QWidget):
         self.get_address.setFont(QFont('Arial',12 ))
         self.get_date.setFont(QFont('Arial',12 ))
         self.get_time.setFont(QFont('Arial',12 ))
+
+        # self.const_water.setStyleSheet("background-color: white")
+        # self.const_quantity.setStyleSheet("background-color: white")
+        # self.const_name.setStyleSheet("background-color: white")
+        # self.const_phone.setStyleSheet("background-color: white")
+        # self.const_address.setStyleSheet("background-color: white")
+        # self.const_date.setStyleSheet("background-color: white")
+        # self.const_time.setStyleSheet("background-color: white")
+        # self.get_water.setStyleSheet("background-color: white")
+        # self.get_quantity.setStyleSheet("background-color: white")
+        # self.get_name.setStyleSheet("background-color: white")
+        # self.get_no.setStyleSheet("background-color: white")
+        # self.get_address.setStyleSheet("background-color: white")
+        # self.get_date.setStyleSheet("background-color: white")
+        # self.get_time.setStyleSheet("background-color: white")
         
         
         
@@ -169,7 +184,21 @@ class SupplierOrders(QWidget):
         self.get_time.setFont(QFont('Arial',12 ))
         
         
-        
+        # self.const_water.setStyleSheet("background-color: white")
+        # self.const_quantity.setStyleSheet("background-color: white")
+        # self.const_name.setStyleSheet("background-color: white")
+        # self.const_phone.setStyleSheet("background-color: white")
+        # self.const_address.setStyleSheet("background-color: white")
+        # self.const_date.setStyleSheet("background-color: white")
+        # self.const_time.setStyleSheet("background-color: white")
+        # self.get_water.setStyleSheet("background-color: white")
+        # self.get_quantity.setStyleSheet("background-color: white")
+        # self.get_name.setStyleSheet("background-color: white")
+        # self.get_no.setStyleSheet("background-color: white")
+        # self.get_address.setStyleSheet("background-color: white")
+        # self.get_date.setStyleSheet("background-color: white")
+        # self.get_time.setStyleSheet("background-color: white")
+
         self.orders_layout2.addWidget(self.const_water,0,0)
         self.orders_layout2.addWidget(self.get_water,0,1)
         self.orders_layout2.addWidget(self.const_quantity,1,0)

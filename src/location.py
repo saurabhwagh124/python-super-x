@@ -91,13 +91,13 @@ class LocationWindow(QWidget):
         #creating boxes
         location_box = QHBoxLayout()
         location_box.setContentsMargins(300,250,300,0)
-
-        saurab_water_box = QHBoxLayout()
-        saurab_water_box.setContentsMargins(300,50,300,0)
+        saurabh_water_box = QHBoxLayout()
+        saurabh_water_box.setContentsMargins(300,50,300,0)
         nachiket_water_box = QHBoxLayout()
         nachiket_water_box.setContentsMargins(300,25,300,0)
         aditya_water_box = QHBoxLayout()
         aditya_water_box.setContentsMargins(300,25,300,0)
+
 
 
         #adding element in the box
@@ -105,8 +105,8 @@ class LocationWindow(QWidget):
         location_box.addWidget(self.location_line)
         location_box.addWidget(self.submit_button)
         
-        saurab_water_box.addWidget(water_provider1)
-        saurab_water_box.addWidget(self.saurab_water_button)
+        saurabh_water_box.addWidget(water_provider1)
+        saurabh_water_box.addWidget(self.saurab_water_button)
 
         nachiket_water_box.addWidget(water_provider2)
         nachiket_water_box.addWidget(self.nachiket_water_button)
@@ -118,8 +118,7 @@ class LocationWindow(QWidget):
 
         #adding layout
         Location_window.addRow(location_box)
-
-        Location_window.addRow(saurab_water_box)
+        Location_window.addRow(saurabh_water_box)
         Location_window.addRow(nachiket_water_box)
         Location_window.addRow(aditya_water_box)
 

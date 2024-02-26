@@ -2,6 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import db
+from PyQt5.QtWidgets import QMessageBox
 
 cred = credentials.Certificate("src/where-smywater-firebase-adminsdk-llijw-537a9cf8d0.json")
 firebase_admin.initialize_app(cred)
@@ -16,14 +17,21 @@ def register_to_db(u_name, f_name, password,phone):
     }
     db.collection('users').document(f'{u_name}').set(user_profile)
 
-def check_login_details(u_name,password):
-    result1 = db.collection('users').where("username","==",f"{u_name}")
-    result2 = db.collection('users').where("password","==",f"{password}")
-    print(result2)
-    print(result1)
-    if(result1 and result2 != None):
-        return True
-    else:
+
+def check_login_details(u_name, password):
+    print(u_name)
+    print(password)
+    user_ref  = db.collection("users").document(u_name)
+    user_data = user_ref.get()
+    print(user_data)
+    print(user_data.exists)
+    if user_data.exists:
+        print(user_data.to_dict()['password'])
+        if user_data.to_dict()['password'] == password:
+            return True
+        else:
+            return False
+    else: 
         return False
         
 def upload_order_details(water,quantity,name,phone,address,date,time,supplier):
@@ -38,11 +46,16 @@ def upload_order_details(water,quantity,name,phone,address,date,time,supplier):
         'supplier': supplier
     }
     db.collection('Orders').document(f'{name}').set(order_details)
+
+
+
 def get_order_details(x):
     resultx = db.collection('Orders').where('name','==',f'{x}').get()
     for i in resultx:
         print(i.to_dict())
         return i.to_dict()
+    
+
     
 def get_suppliers_orders(supplier_u_name,index):
     result_all = db._get_collection_reference('Orders').where('supplier','==',f'{supplier_u_name}').get()
@@ -56,23 +69,45 @@ def get_suppliers_orders(supplier_u_name,index):
 
 
 
-def upload_supplier_details(name,username,phone,password):
+def upload_supplier_details(name,username,phone,area,password):
     admin_register = {
         'name':name,
         'username': username,
         'phone' : phone,
+        'area' : area,
         'password': password
     }
     db.collection('Admin').document(f'{username}').set(admin_register)
 
+
 def check_supplier_login(supplier_u_name,supplier_password):
-    result1 = db.collection('users').where("username","==",f"{supplier_u_name}")
-    result2 = db.collection('users').where("password","==",f"{supplier_password}")
-    print(result2)
-    print(result1)
-    if(result1 and result2 != None):
+    user_ref  = db.collection("Admin").document(supplier_u_name)
+    user_data = user_ref.get()
+    print(user_data)
+    print(user_data.exists)
+    if user_data.exists:
+        print(user_data.to_dict()['password'])
+        if user_data.to_dict()['password'] == supplier_password:
+            return True
+        else:
+            return False
+    else: 
+        return False
+
+def check_username_availability(u_name):
+    user_ref = db.collection('users').document(u_name)
+    user_data = user_ref.get()
+    if user_data.exists:
         return True
     else:
         return False
+
+def check_sup_username_availability(u_name):
+    user_ref = db.collection('Admin').document(u_name)
+    user_data = user_ref.get()
+    if user_data.exists:
+        return True
+    else:
+        return False 
         
         

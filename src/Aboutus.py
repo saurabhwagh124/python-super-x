@@ -17,7 +17,7 @@ class AboutUs(QWidget):
         line1 = QLabel("Our team would like to express gratitude to Shashi Sir")
         line2 = QLabel("and Core2Web team to provide us with this opportunity  ")
         line3 = QLabel("to present our project on this platform. ")
-
+        linerahul  = QLabel("Mentor:- Rahul Dada")
         line7=QLabel("Groupleader :- Saurabh Wagh")
         line8=QLabel("Members:- Adinath Khose, Nachiket Bokade, Aditya Andhale ")
 
@@ -25,7 +25,7 @@ class AboutUs(QWidget):
         line1.setFont(QFont('Arial',13 ))
         line2.setFont(QFont('Arial',13 )) 
         line3.setFont(QFont('Arial',13 )) 
-        
+        linerahul.setFont(QFont('Arial',13))
         line7.setFont(QFont('Arial',13 ))
         line8.setFont(QFont('Arial',13 ))
         self.back = QPushButton("Back")
@@ -78,9 +78,13 @@ class AboutUs(QWidget):
         line6_box.setAlignment(Qt.AlignCenter)
         line6_box.setContentsMargins(100,27,100,0)
 
+        linerahul_box = QHBoxLayout()
+        linerahul_box.setAlignment(Qt.AlignCenter)
+        linerahul_box.setContentsMargins(45,10,250,0)
+
         line7_box = QHBoxLayout()
         line7_box.setAlignment(Qt.AlignCenter)
-        line7_box.setContentsMargins(25,10,250,0)
+        line7_box.setContentsMargins(45,10,250,0)
 
         line8_box = QHBoxLayout()
         line8_box.setAlignment(Qt.AlignCenter)
@@ -103,8 +107,7 @@ class AboutUs(QWidget):
         self.pixmap.scaled(100,100,)
         
         self.label.setPixmap(self.pixmap)
-        #self.label.resize(500,500)
-        #self.label.setContentsMargins(500,20,500,0)
+        
         self.label.setAlignment(Qt.AlignCenter)
         
       #   img_box.addWidget(self.label)
@@ -113,7 +116,7 @@ class AboutUs(QWidget):
         line1_box.addWidget(line1)
         line2_box.addWidget(line2)
         line3_box.addWidget(line3)
-       
+        linerahul_box.addWidget(linerahul)
         line7_box.addWidget(line7)
         line8_box.addWidget(line8)
         
@@ -135,7 +138,7 @@ class AboutUs(QWidget):
         thankyou_window.addRow(line1_box)
         thankyou_window.addRow(line2_box)
         thankyou_window.addRow(line3_box)
-       
+        thankyou_window.addRow(linerahul_box)
         thankyou_window.addRow(line7_box)
         thankyou_window.addRow(line8_box)
         

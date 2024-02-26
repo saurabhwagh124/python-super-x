@@ -22,6 +22,9 @@ class RegisterWindow(QWidget):
             user_label = QLabel("Username: ")
             pass_label = QLabel("Password: ")
 
+            self.check_u_name = QPushButton("Check Username")
+
+
             #changing font size 
 
             name_label.setFont(QFont('Arial',12 )) 
@@ -87,7 +90,15 @@ class RegisterWindow(QWidget):
 
             #creating submit button ...................
 
-            
+            self.check_u_name.setFixedSize(100,30)
+            self.check_u_name.setStyleSheet("QPushButton::hover"
+                     "{"
+                     "background-color : lightgreen;border-radius: 10px ;border-style: outset;"
+                     "}"
+                     "QPushButton"
+                             "{"
+                             "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
+                             "}")
             self.submit_button.setFixedSize(100,50)
             self.submit_button.setStyleSheet("QPushButton::hover"
                      "{"
@@ -111,7 +122,7 @@ class RegisterWindow(QWidget):
             phone_box=QHBoxLayout()
             phone_box.setContentsMargins(270,0,400,0)
             user_box=QHBoxLayout()
-            user_box.setContentsMargins(270,0,400,0)
+            user_box.setContentsMargins(270,0,300,0)
             pass_box=QHBoxLayout()
             pass_box.setContentsMargins(270,0,400,0)
             submit_box = QVBoxLayout()
@@ -127,6 +138,7 @@ class RegisterWindow(QWidget):
 
             user_box.addWidget(user_label)
             user_box.addWidget(self.user_line)
+            user_box.addWidget(self.check_u_name)
 
             pass_box.addWidget(pass_label)
             pass_box.addWidget(self.pass_line)
@@ -142,7 +154,7 @@ class RegisterWindow(QWidget):
             register_window.addRow(pass_box)
             register_window.addRow(submit_box)
             register_window.setAlignment(Qt.AlignCenter)
-
+            
             return register_window
 
 
