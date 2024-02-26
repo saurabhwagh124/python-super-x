@@ -14,6 +14,7 @@ class confirmedDetails(QWidget):
         self.setGeometry(350,150,1200,800)
          
         # setting  the fixed width of window
+        self.str_water = "Water"
         self.str_quantity=" sample quantity"
         self.str_name=" sample time"
         self.str_phone=" sample phone"
@@ -21,15 +22,18 @@ class confirmedDetails(QWidget):
         self.str_date=" sample date"
         self.str_time= " sample time"
         self.str_supplier = "sample supplier"
+
+        self.logout_button = QPushButton("LogOut")
     
         
         
 
     def display_ticket(self,x):
-        self.confirmed_window=QFormLayout()
+        self.confirmed_window=QGridLayout()
         self.name = x
 
         value_return = get_order_details(self.name)
+        self.str_water = value_return['water']
         self.str_quantity = value_return['quantity']
         self.str_name = value_return['name']
         self.str_phone = value_return['phone']
@@ -39,34 +43,29 @@ class confirmedDetails(QWidget):
         self.str_supplier = value_return['supplier']
 
         # creating labels
+        self.conf_water_label = QLabel("Water: ")
         self.conf_quantity_label = QLabel("Quantity of water needed: ")
-        self.conf_name_label =  QLabel("                       Name: ")
-        self.conf_phone_label = QLabel("                  Phone no.: ")
-        self.conf_address_label = QLabel("                  Address: ")
-        self.conf_date_label  = QLabel("                       Date: ")
-        self.conf_time_label = QLabel("                        Time: ") 
-        self.conf_supplier_label = QLabel("                 Supplier:")
+        self.conf_name_label =  QLabel("Name: ")
+        self.conf_phone_label = QLabel("Phone no.: ")
+        self.conf_address_label = QLabel("Address: ")
+        self.conf_date_label  = QLabel("Date: ")
+        self.conf_time_label = QLabel("Time: ") 
+        self.conf_supplier_label = QLabel("Supplier:")
 
         # creating LineEdits
+        self.conf_water_line = QLabel(self.str_water)
         self.conf_quantity_line = QLabel(self.str_quantity)
-        self.conf_quantity_line.setContentsMargins(100,0,500,0)
         self.conf_name_line = QLabel(self.str_name)
-        self.conf_name_line.setContentsMargins(100,0,500,0)
         self.conf_phone_line = QLabel(self.str_phone)
-        self.conf_phone_line.setContentsMargins(100,0,500,0)
         self.conf_address_line = QLabel(self.str_address)
-        self.conf_address_line.setContentsMargins(100,0,500,0)
         self.conf_date_line = QLabel(self.str_date)
-        self.conf_date_line.setContentsMargins(100,0,500,0)
         self.conf_time_line = QLabel(self.str_time)
-        self.conf_time_line.setContentsMargins(100,0,500,0)
         self.conf_supplier_line =QLabel(self.str_supplier)
-        self.conf_supplier_line.setContentsMargins(100,0,500,0)
        
 
         
          #changing font size 
-
+        self.conf_water_label.setFont(QFont('Arial',12))
         self.conf_quantity_label.setFont(QFont('Arial',12 )) 
         self.conf_name_label.setFont(QFont('Arial',12 ))
         self.conf_phone_label.setFont(QFont('Arial',12 ))
@@ -76,6 +75,7 @@ class confirmedDetails(QWidget):
         self.conf_supplier_label.setFont(QFont('Arial',12))
 
 
+        self.conf_water_line = QLabel(self.str_water)
         self.conf_quantity_line = QLabel(self.str_quantity)
         self.conf_name_line = QLabel(self.str_name)
         self.conf_phone_line = QLabel(self.str_phone)
@@ -85,18 +85,8 @@ class confirmedDetails(QWidget):
         self.conf_supplier_line = QLabel(self.str_supplier)
 
 
-        self.confirmed_window.addWidget(self.conf_quantity_line)
-        self.confirmed_window.addWidget(self.conf_name_line)
-        self.confirmed_window.addWidget(self.conf_phone_line)
-        self.confirmed_window.addWidget(self.conf_address_line)
-        self.confirmed_window.addWidget(self.conf_date_line)
-        self.confirmed_window.addWidget(self.conf_time_line)
-        self.confirmed_window.addWidget(self.conf_supplier_line)
-
-
-
         #fontsizeself.
-
+        self.conf_water_line.setFont(QFont('Arial',12))
         self.conf_quantity_line.setFont(QFont('Arial',12))
         self.conf_name_line.setFont(QFont('Arial',12))
         self.conf_phone_line.setFont(QFont('Arial',12))
@@ -106,61 +96,30 @@ class confirmedDetails(QWidget):
         self.conf_supplier_line.setFont(QFont('Arial',12))
 
 
-        #creating boxes
-
-        self.conf_quantity_box =QHBoxLayout()
-        self.conf_quantity_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_name_box=QHBoxLayout()
-        self.conf_name_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_phone_box=QHBoxLayout()
-        self.conf_phone_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_address_box=QHBoxLayout()
-        self.conf_address_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_date_box=QHBoxLayout()
-        self.conf_date_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_time_box=QHBoxLayout()
-        self.conf_time_box.setAlignment(Qt.AlignCenter)
-
-        self.conf_supplier_box = QHBoxLayout()
-        self.conf_supplier_box.setAlignment(Qt.AlignCenter)
+        self.logout_button.setFont(QFont('Arial',12))
         
         
-        #adding element in the hbox
-
-        self.conf_quantity_box.addWidget(self.conf_quantity_label)
-        self.conf_quantity_box.addWidget(self.conf_quantity_line)
-
-        self.conf_name_box.addWidget(self.conf_name_label)
-        self.conf_name_box.addWidget(self.conf_name_line)
-
-        self.conf_phone_box.addWidget(self.conf_phone_label)
-        self.conf_phone_box.addWidget(self.conf_phone_line)
-
-        self.conf_address_box.addWidget(self.conf_address_label)
-        self.conf_address_box.addWidget(self.conf_address_line)
-
-        self.conf_date_box.addWidget(self.conf_date_label)
-        self.conf_date_box.addWidget(self.conf_date_line)
-
-        self.conf_time_box.addWidget(self.conf_time_label)
-        self.conf_time_box.addWidget(self.conf_time_line)
-
-        self.conf_supplier_box.addWidget(self.conf_supplier_label)
-        self.conf_supplier_box.addWidget(self.conf_supplier_line)
-         #adding elements to form layout
-
-        self.confirmed_window.addRow(self.conf_quantity_box)
-        self.confirmed_window.addRow(self.conf_name_box)
-        self.confirmed_window.addRow(self.conf_phone_box)
-        self.confirmed_window.addRow(self.conf_address_box)
-        self.confirmed_window.addRow(self.conf_date_box)
-        self.confirmed_window.addRow(self.conf_time_box)
-        self.confirmed_window.addRow(self.conf_supplier_box)
+        blank_label = QLabel("")
+        #adding elements to form layout
+        
+        self.confirmed_window.addWidget(self.conf_water_label,0,0)
+        self.confirmed_window.addWidget(self.conf_water_line,0,1)
+        self.confirmed_window.addWidget(self.conf_quantity_label,1,0)
+        self.confirmed_window.addWidget(self.conf_quantity_line,1,1)
+        self.confirmed_window.addWidget(self.conf_name_label,2,0)
+        self.confirmed_window.addWidget(self.conf_name_line,2,1)
+        self.confirmed_window.addWidget(self.conf_phone_label,3,0)
+        self.confirmed_window.addWidget(self.conf_phone_line,3,1)
+        self.confirmed_window.addWidget(self.conf_address_label,4,0)
+        self.confirmed_window.addWidget(self.conf_address_line,4,1)
+        self.confirmed_window.addWidget(self.conf_date_label,5,0)
+        self.confirmed_window.addWidget(self.conf_date_line,5,1)
+        self.confirmed_window.addWidget(self.conf_time_label,6,0)
+        self.confirmed_window.addWidget(self.conf_time_line,6,1)
+        self.confirmed_window.addWidget(self.conf_supplier_label,7,0)
+        self.confirmed_window.addWidget(self.conf_supplier_line,7,1)
+        self.confirmed_window.addWidget(blank_label,8,0)
+        self.confirmed_window.addWidget(self.logout_button,9,0)
         self.confirmed_window.setAlignment(Qt.AlignCenter)
 
         return self.confirmed_window 

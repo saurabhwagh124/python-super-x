@@ -18,6 +18,7 @@ class ConfirmOrderWindow(QWidget):
         confirmation_window = QFormLayout()
         self.supplier_name_order = supplier_name
         #creating labels 
+        con_water  = QLabel("Water: ")
         con_quantity = QLabel("Quantity of water needed: ")
         con_name =  QLabel("Name: ")
         con_phone = QLabel("Phone no.: ")
@@ -28,6 +29,7 @@ class ConfirmOrderWindow(QWidget):
         self.con_supplier = QLabel(supplier_name)
 
         # settind font size and style
+        con_water.setFont(QFont('Arial',15))
         con_quantity.setFont(QFont('Arial',12 )) 
         con_name.setFont(QFont('Arial',12 )) 
         con_phone.setFont(QFont('Arial',12 )) 
@@ -49,7 +51,7 @@ class ConfirmOrderWindow(QWidget):
                              "}")
       
         self.submit_button.setFixedSize(100,50)
-        self.submit_button.setFont(QFont('Arial', 15))
+        self.submit_button.setFont(QFont('Arial', 12))
         submit_box = QVBoxLayout()
         submit_box.addWidget(self.submit_button)
         submit_box.setAlignment(Qt.AlignCenter)
@@ -61,9 +63,15 @@ class ConfirmOrderWindow(QWidget):
        
 
         #creating line edits
+
+        self.con_water_combo = QComboBox()
+        self.con_water_combo.addItem("Drinking Water")
+        self.con_water_combo.addItem("Tanker")
+        self.con_water_combo.setFont(QFont('Arial',15))
+
         self.con_quantity_line  = QLineEdit()
-        self.con_quantity_line.setMaxLength(2)
-        self.con_quantity_line.setValidator(QIntValidator(1,99))
+        self.con_quantity_line.setMaxLength(5)
+        self.con_quantity_line.setValidator(QIntValidator(1,99999))
         self.con_quantity_line.setPlaceholderText("Enter the quantity of water")
         self.con_quantity_line.setFont(QFont('Arial',11))
 
@@ -117,6 +125,9 @@ class ConfirmOrderWindow(QWidget):
 
 
         #creating boxes
+        water_box = QHBoxLayout()
+        water_box.setAlignment(Qt.AlignCenter)
+        water_box.setContentsMargins(250,50,250,0)
         quantity_box = QHBoxLayout()
         quantity_box.setAlignment(Qt.AlignCenter)
         quantity_box.setContentsMargins(250,50,250,0)
@@ -154,6 +165,10 @@ class ConfirmOrderWindow(QWidget):
         self.con_clock.setFont(QFont('Arial',11))
 
         #adding elements into boxes
+
+        water_box.addWidget(con_water)
+        water_box.addWidget(self.con_water_combo)
+
         quantity_box.addWidget(con_quantity)
         quantity_box.addWidget(self.con_quantity_line)
 
@@ -177,6 +192,7 @@ class ConfirmOrderWindow(QWidget):
         supplier_box.addWidget(self.con_supplier)
 
         #adding elements to the layout
+        confirmation_window.addRow(water_box)
         confirmation_window.addRow(quantity_box)
         confirmation_window.addRow(name_box)
         confirmation_window.addRow(phone_box)

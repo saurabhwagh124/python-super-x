@@ -26,8 +26,9 @@ def check_login_details(u_name,password):
     else:
         return False
         
-def upload_order_details(quantity,name,phone,address,date,time,supplier):
+def upload_order_details(water,quantity,name,phone,address,date,time,supplier):
     order_details = {
+        'water' : water,
         'quantity' : quantity,
         'name': name,
         'phone': phone,
@@ -43,8 +44,15 @@ def get_order_details(x):
         print(i.to_dict())
         return i.to_dict()
     
-def get_suppliers_orders():
-    result_all = db._get_collection_reference('Orders')
+def get_suppliers_orders(supplier_u_name,index):
+    result_all = db._get_collection_reference('Orders').where('supplier','==',f'{supplier_u_name}').get()
+    listx = []
+    for index in result_all:
+        #print (index.to_dict())
+        listx.append(index.to_dict())
+    print(listx)
+    return listx
+
 
 
 
@@ -56,4 +64,15 @@ def upload_supplier_details(name,username,phone,password):
         'password': password
     }
     db.collection('Admin').document(f'{username}').set(admin_register)
+
+def check_supplier_login(supplier_u_name,supplier_password):
+    result1 = db.collection('users').where("username","==",f"{supplier_u_name}")
+    result2 = db.collection('users').where("password","==",f"{supplier_password}")
+    print(result2)
+    print(result1)
+    if(result1 and result2 != None):
+        return True
+    else:
+        return False
+        
         

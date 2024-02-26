@@ -24,26 +24,26 @@ class SupplierWindow(QWidget):
         supplier_password_label.setFont(QFont('Arial',12))
 
         # creating LineEdits
-        supplier_u_name_line = QLineEdit()
-        supplier_u_name_line.setPlaceholderText("Enter your name")
+        self.supplier_u_name_line = QLineEdit()
+        self.supplier_u_name_line.setPlaceholderText("Enter your name")
 
-        supplier_u_name_line.setGeometry(0,0,200,60)
-        supplier_u_name_line.setFont(QFont('Arial',12))
-        supplier_password_line = QLineEdit()
-        supplier_password_line.setEchoMode(QLineEdit.Password)
-        supplier_password_line.setPlaceholderText("Enter your password")
+        self.supplier_u_name_line.setGeometry(0,0,200,60)
+        self.supplier_u_name_line.setFont(QFont('Arial',12))
+        self.supplier_password_line = QLineEdit()
+        self.supplier_password_line.setEchoMode(QLineEdit.Password)
+        self.supplier_password_line.setPlaceholderText("Enter your password")
 
-        supplier_password_line.setGeometry(0,0,200,60)
-        supplier_password_line.setFont(QFont('Arial',12))
+        self.supplier_password_line.setGeometry(0,0,200,60)
+        self.supplier_password_line.setFont(QFont('Arial',12))
 
         #curves
 
-        supplier_u_name_line.setStyleSheet("border :1px solid cyan;"
+        self.supplier_u_name_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
-        supplier_password_line.setStyleSheet("border :1px solid cyan;"
+        self.supplier_password_line.setStyleSheet("border :1px solid cyan;"
                                    "border-top-left-radius :15px;"
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
@@ -88,10 +88,10 @@ class SupplierWindow(QWidget):
 
         # adding elements in the hboxes
         sup_u_name_box.addWidget(supplier_u_name_label)
-        sup_u_name_box.addWidget(supplier_u_name_line)
+        sup_u_name_box.addWidget(self.supplier_u_name_line)
 
         sup_password_box.addWidget(supplier_password_label)
-        sup_password_box.addWidget(supplier_password_line)
+        sup_password_box.addWidget(self.supplier_password_line)
 
         button_box.addWidget(self.sup_login_button)
         button_box.addWidget(self.sup_signup_button)
