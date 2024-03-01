@@ -129,8 +129,6 @@ class AboutUs(QWidget):
         white_palette = QPalette()
         white_palette.setColor(QPalette.WindowText, QColor(255,255,255))
 
-      #   for label in [ Title,line1,line2, line3, line7, line8]:
-      #       label.setPalette(white_palette)
 
 
         thankyou_window.addRow(img_box)

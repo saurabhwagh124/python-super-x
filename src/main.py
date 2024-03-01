@@ -211,6 +211,7 @@ class MainWindow(QMainWindow):
                                    " border-top-right-radius : 15px; "
                                    "border-bottom-left-radius : 15px; "
                                    "border-bottom-right-radius : 15px") 
+        
         self.password_line = QLineEdit()
         self.password_line.setPlaceholderText("Enter your password")
 

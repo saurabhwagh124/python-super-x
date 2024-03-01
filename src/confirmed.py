@@ -74,14 +74,6 @@ class confirmedDetails(QWidget):
         self.conf_time_label.setFont(QFont('Arial',12 ))
         self.conf_supplier_label.setFont(QFont('Arial',12))
 
-        # self.conf_water_label.setStyleSheet("background-color: white")
-        # self.conf_quantity_label.setStyleSheet("background-color: white")
-        # self.conf_name_label.setStyleSheet("background-color: white")
-        # self.conf_phone_label.setStyleSheet("background-color: white")
-        # self.conf_address_label.setStyleSheet("background-color: white")
-        # self.conf_date_label.setStyleSheet("background-color: white")
-        # self.conf_time_label.setStyleSheet("background-color: white")
-        # self.conf_supplier_label.setStyleSheet("background-color: white")
 
 
         self.conf_water_line = QLabel(self.str_water)
@@ -104,14 +96,6 @@ class confirmedDetails(QWidget):
         self.conf_time_line.setFont(QFont('Arial',12))
         self.conf_supplier_line.setFont(QFont('Arial',12))
 
-        # self.conf_water_line.setStyleSheet("background-color: white")
-        # self.conf_quantity_line.setStyleSheet("background-color: white")
-        # self.conf_name_line.setStyleSheet("background-color: white")
-        # self.conf_phone_line.setStyleSheet("background-color: white")
-        # self.conf_address_line.setStyleSheet("background-color: white")
-        # self.conf_date_line.setStyleSheet("background-color: white")
-        # self.conf_time_line.setStyleSheet("background-color: white")
-        # self.conf_supplier_line.setStyleSheet("background-color: white")
 
 
         self.logout_button.setFont(QFont('Arial',12))
