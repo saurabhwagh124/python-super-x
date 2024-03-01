@@ -14,7 +14,6 @@ from Aboutus import *
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()        
-        print("Calling constructor")
         self.setWindowTitle("Where is my water?")
         self.setGeometry(350,150,1200,800)     
 
@@ -48,7 +47,6 @@ class MainWindow(QMainWindow):
         self.setPalette(palette)   
 
     def set_register_ui(self):
-        print("Clicked!!!!!")
         self.reg_wid = QWidget()
         self.setCentralWidget(self.reg_wid)
         self.reg_wid.setLayout(self.obj_register.get_register_ui())
@@ -85,7 +83,6 @@ class MainWindow(QMainWindow):
         self.background("water.jpg")
 
     def set_location_ui(self):
-        print("Tanker and drinking")
         check = check_login_details(self.username_line.text(), self.password_line.text())
         if (check): 
             self.location_widget = QWidget()
@@ -124,7 +121,6 @@ class MainWindow(QMainWindow):
     
     
     def set_supplier_ui(self):
-        print("Supplier")
         self.supplier_wid = QWidget()
         self.setCentralWidget(self.supplier_wid)
         self.supplier_wid.setLayout(self.obj_supplier.get_supplier_login_ui())
