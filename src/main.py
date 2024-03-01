@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()        
         print("Calling constructor")
-        self.setWindowTitle("Where's My Water")
+        self.setWindowTitle("Where is my water?")
         self.setGeometry(350,150,1200,800)
         # geometry(align left, align top, width, height)        
 

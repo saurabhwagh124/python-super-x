@@ -44,20 +44,16 @@ class SupplierOrders(QWidget):
         self.orders_layout = QGridLayout()
         self.supplier_u_name = supplier_u_name
         self.order_bundles = get_suppliers_orders(supplier_u_name,index)
-
-        self.water = self.order_bundles[in_length]['water']
-        self.quantity = self.order_bundles[in_length]['quantity']
-        print("Printed",self.quantity)
-        self.name = self.order_bundles[in_length]['name']
-        print("Printed",self.name)
-        self.no = self.order_bundles[in_length]['phone']
-        print("Printed",self.no)
-        self.address = self.order_bundles[in_length]['address']
-        print("Printed",self.address)
-        self.date = self.order_bundles[in_length]['date']
-        print("Printed",self.date)
-        self.time = self.order_bundles[in_length]['time']
-        print("Printed",self.time)
+        if len(self.order_bundles)==0:
+            QMessageBox.warning(self,'Warning','No orders Found')
+        else: 
+            self.water = self.order_bundles[in_length]['water']
+            self.quantity = self.order_bundles[in_length]['quantity']
+            self.name = self.order_bundles[in_length]['name']
+            self.no = self.order_bundles[in_length]['phone']
+            self.address = self.order_bundles[in_length]['address']
+            self.date = self.order_bundles[in_length]['date']
+            self.time = self.order_bundles[in_length]['time']
 
         self.const_water = QLabel("Water")
         self.const_water.setFont(QFont('Arial',12))
@@ -91,20 +87,6 @@ class SupplierOrders(QWidget):
         self.get_date.setFont(QFont('Arial',12 ))
         self.get_time.setFont(QFont('Arial',12 ))
 
-        # self.const_water.setStyleSheet("background-color: white")
-        # self.const_quantity.setStyleSheet("background-color: white")
-        # self.const_name.setStyleSheet("background-color: white")
-        # self.const_phone.setStyleSheet("background-color: white")
-        # self.const_address.setStyleSheet("background-color: white")
-        # self.const_date.setStyleSheet("background-color: white")
-        # self.const_time.setStyleSheet("background-color: white")
-        # self.get_water.setStyleSheet("background-color: white")
-        # self.get_quantity.setStyleSheet("background-color: white")
-        # self.get_name.setStyleSheet("background-color: white")
-        # self.get_no.setStyleSheet("background-color: white")
-        # self.get_address.setStyleSheet("background-color: white")
-        # self.get_date.setStyleSheet("background-color: white")
-        # self.get_time.setStyleSheet("background-color: white")
         
         
         
@@ -184,20 +166,6 @@ class SupplierOrders(QWidget):
         self.get_time.setFont(QFont('Arial',12 ))
         
         
-        # self.const_water.setStyleSheet("background-color: white")
-        # self.const_quantity.setStyleSheet("background-color: white")
-        # self.const_name.setStyleSheet("background-color: white")
-        # self.const_phone.setStyleSheet("background-color: white")
-        # self.const_address.setStyleSheet("background-color: white")
-        # self.const_date.setStyleSheet("background-color: white")
-        # self.const_time.setStyleSheet("background-color: white")
-        # self.get_water.setStyleSheet("background-color: white")
-        # self.get_quantity.setStyleSheet("background-color: white")
-        # self.get_name.setStyleSheet("background-color: white")
-        # self.get_no.setStyleSheet("background-color: white")
-        # self.get_address.setStyleSheet("background-color: white")
-        # self.get_date.setStyleSheet("background-color: white")
-        # self.get_time.setStyleSheet("background-color: white")
 
         self.orders_layout2.addWidget(self.const_water,0,0)
         self.orders_layout2.addWidget(self.get_water,0,1)
