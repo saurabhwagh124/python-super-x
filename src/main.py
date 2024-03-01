@@ -16,8 +16,7 @@ class MainWindow(QMainWindow):
         super().__init__()        
         print("Calling constructor")
         self.setWindowTitle("Where is my water?")
-        self.setGeometry(350,150,1200,800)
-        # geometry(align left, align top, width, height)        
+        self.setGeometry(350,150,1200,800)     
 
         self.obj_register = RegisterWindow()
         self.obj_about = AboutUs()
@@ -33,12 +32,12 @@ class MainWindow(QMainWindow):
         self.center_widget.setLayout(self.get_login_ui())
         self.background("water.jpg")
 
-        #self.setLayout()
+        
 
     def background(self,image_name):    
-        # self.image_name= "water.jpg"
+        
         self.current_dir = os.path.dirname(os.path.abspath(__file__))
-        self.project_dir = os.path.abspath(os.path.join(self.current_dir, ".."))  # Go up one directory
+        self.project_dir = os.path.abspath(os.path.join(self.current_dir, ".."))  
 
         self.image_path = os.path.join(self.project_dir,"assets" , image_name)
         oImage = QImage(self.image_path)
@@ -155,7 +154,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.supplier_wid2)
         self.supplier_wid2.setLayout(self.obj_supplier.get_supplier_login_ui())
         self.obj_supplier.sup_login_button.clicked.connect(lambda: self.set_sup_orders_ui(self.obj_supplier.supplier_u_name_line.text(),self.obj_supplier.supplier_password_line.text()))
-        #self.background("water_del.jpg")
+        
     
     def set_sup_orders_ui(self,supplier_u_name,supplier_password):
         check_admin = check_supplier_login(supplier_u_name,supplier_password)
@@ -183,7 +182,7 @@ class MainWindow(QMainWindow):
 
         login_window = QFormLayout()
 
-        # creating labels
+        
         username_label = QLabel("Username: ")
         username_label.setFont(QFont("Arial",13,20))
         username_label.setStyleSheet("background-color : white")
@@ -201,7 +200,7 @@ class MainWindow(QMainWindow):
         blank_label3 = QLabel("")
         blank_label3.setFixedHeight(20)
 
-        # creating LineEdits
+        
         self.username_line = QLineEdit()
         self.username_line.setPlaceholderText("Enter your username")
         self.username_line.setGeometry(0,0,200,60)
@@ -226,7 +225,7 @@ class MainWindow(QMainWindow):
                                    "border-bottom-right-radius : 15px") 
 
 
-        #creating buttons
+        
         about_us_button = QPushButton("About us")
         about_us_button.setFixedSize(100,40)
         about_us_button.setFont(QFont("Arial",12))
@@ -241,7 +240,7 @@ class MainWindow(QMainWindow):
         admin_button.setFixedSize(100,40)
         admin_button.setFont(QFont("Arial",12))
 
-        #button theme
+        
 
         login_button.setStyleSheet("QPushButton::hover"
                      "{"
@@ -276,7 +275,7 @@ class MainWindow(QMainWindow):
                              "background-color : lightyellow;border-radius: 10px ;border-style: outset;"
                              "}")
 
-        #creating boxes
+        
         username_box = QHBoxLayout()
         username_box.setContentsMargins(400,250,400,0)
         password_box = QHBoxLayout()
@@ -285,7 +284,7 @@ class MainWindow(QMainWindow):
         admin_box = QVBoxLayout()
         about_us_box = QHBoxLayout()
 
-        # adding elements in the hboxes
+        
         username_box.addWidget(username_label)
         username_box.addWidget(self.username_line)
 
@@ -302,7 +301,7 @@ class MainWindow(QMainWindow):
         about_us_box.addWidget(about_us_button)
         about_us_box.setAlignment(Qt.AlignCenter)
 
-        #adding elements to form layout
+        
         login_window.addRow(username_box)
         login_window.addRow(password_box)
         login_window.addRow(blank_label1)
@@ -313,7 +312,7 @@ class MainWindow(QMainWindow):
         login_window.addRow(about_us_box)
         login_window.setAlignment(Qt.AlignCenter)
 
-        # on clicked
+        
         signup_button.clicked.connect(lambda: self.set_register_ui())
         admin_button.clicked.connect(lambda: self.set_supplier_ui())
         about_us_button.clicked.connect(lambda: self.set_about_us_ui())
