@@ -35,11 +35,6 @@ class SupplierOrders(QWidget):
         self.supplier_u_name = ''
         self.index = 0
 
-        
-        
-        
-
-
     def get_supplier_orders_ui(self,supplier_u_name,index,in_length=0):
         self.orders_layout = QGridLayout()
         self.supplier_u_name = supplier_u_name
@@ -87,9 +82,6 @@ class SupplierOrders(QWidget):
         self.get_date.setFont(QFont('Arial',12 ))
         self.get_time.setFont(QFont('Arial',12 ))
 
-        
-        
-        
         self.orders_layout.addWidget(self.const_water,0,0)
         self.orders_layout.addWidget(self.get_water,0,1)
         self.orders_layout.addWidget(self.const_quantity,1,0)
