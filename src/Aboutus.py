@@ -80,15 +80,15 @@ class AboutUs(QWidget):
 
         linerahul_box = QHBoxLayout()
         linerahul_box.setAlignment(Qt.AlignCenter)
-        linerahul_box.setContentsMargins(45,10,250,0)
+        linerahul_box.setContentsMargins(100,10,100,0)
 
         line7_box = QHBoxLayout()
         line7_box.setAlignment(Qt.AlignCenter)
-        line7_box.setContentsMargins(45,10,250,0)
+        line7_box.setContentsMargins(100,10,100,0)
 
         line8_box = QHBoxLayout()
         line8_box.setAlignment(Qt.AlignCenter)
-        line8_box.setContentsMargins(10,10,320,0)
+        line8_box.setContentsMargins(100,10,100,0)
 
         line9_box = QHBoxLayout()
         line9_box.setAlignment(Qt.AlignCenter)
