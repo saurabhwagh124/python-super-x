@@ -19,7 +19,7 @@ class ConfirmOrderWindow(QWidget):
         self.supplier_name_order = supplier_name
         #creating labels 
         con_water  = QLabel("Water: ")
-        con_quantity = QLabel("Quantity of water needed: ")
+        con_quantity = QLabel("Quantity of water needed(In Ltrs.): ")
         con_name =  QLabel("Name: ")
         con_phone = QLabel("Phone no.: ")
         con_address = QLabel("Address: ")
