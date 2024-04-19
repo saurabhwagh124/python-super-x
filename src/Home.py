@@ -19,14 +19,14 @@ def register_to_db(u_name, f_name, password,phone):
 
 
 def check_login_details(u_name, password):
-    print(u_name)
-    print(password)
+    # print(u_name)
+    # print(password)
     user_ref  = db.collection("users").document(u_name)
     user_data = user_ref.get()
-    print(user_data)
-    print(user_data.exists)
+    # print(user_data)
+    # print(user_data.exists)
     if user_data.exists:
-        print(user_data.to_dict()['password'])
+        # print(user_data.to_dict()['password'])
         if user_data.to_dict()['password'] == password:
             return True
         else:
@@ -52,7 +52,7 @@ def upload_order_details(water,quantity,name,phone,address,date,time,supplier):
 def get_order_details(x):
     resultx = db.collection('Orders').where('name','==',f'{x}').get()
     for i in resultx:
-        print(i.to_dict())
+        # print(i.to_dict())
         return i.to_dict()
     
 
@@ -63,7 +63,7 @@ def get_suppliers_orders(supplier_u_name,index):
     for index in result_all:
         #print (index.to_dict())
         listx.append(index.to_dict())
-    print(listx)
+    # print(listx)
     return listx
 
 
@@ -83,10 +83,10 @@ def upload_supplier_details(name,username,phone,area,password):
 def check_supplier_login(supplier_u_name,supplier_password):
     user_ref  = db.collection("Admin").document(supplier_u_name)
     user_data = user_ref.get()
-    print(user_data)
-    print(user_data.exists)
+    # print(user_data)
+    # print(user_data.exists)
     if user_data.exists:
-        print(user_data.to_dict()['password'])
+        # print(user_data.to_dict()['password'])
         if user_data.to_dict()['password'] == supplier_password:
             return True
         else:
